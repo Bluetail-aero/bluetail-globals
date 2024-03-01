@@ -1,0 +1,23 @@
+{
+  "name": "bluetail-globals",
+  "version": "2024.3.1",
+  "description": "Shared package/library conatins shit we can share across the FE and BE to keep everyone synced.",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/Bluetail-aero/bluetail-global.git",
+  "engine": {
+    "node": "16.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --cache --ext js --ext jsx ./",
+    "lint:fix": "eslint --cache --fix --ext js --ext jsx ./"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-mocha": "^10.1.0"
+  }
+}

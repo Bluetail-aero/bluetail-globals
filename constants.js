@@ -26,6 +26,7 @@
     2024.02.29 - Moved validateEnum to bluetail-utils/validationUtils.
     2024.02.29 - Add LOGIN_TYPE enum.
     2024.02.29 - Moved from bluetail-domain to bluetail-globals.
+    2024.03.11 - Introduce ALLOWED_FILE_PATH_CHARS constant.
 */
 
 const DEFAULT_FLEET_NAME = 'All Aircraft';
@@ -34,7 +35,11 @@ const DEFAULT_FLEET_NAME = 'All Aircraft';
 const HOLD_SHORT = 9;
 
 // These characters are not allowed in file names. They will be removed and replaced by "_".
-const ILLEGAL_FILE_PATH_CHARS = /[#%+&() -]/g;
+const ILLEGAL_FILE_PATH_CHARS = /[^0-9a-zA-Z!\-_.*'()/]/g;
+// These characters are allowed in file names.
+const ALLOWED_FILE_PATH_CHARS = /[0-9a-zA-Z!\-_.*'()/]/g;
+// Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
+// https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
 
 // These are the file extensions that are allowed to be uploaded.
 const ALLOWED_EXTENSIONS = ['pdf', 'jpg', 'png', 'jpeg', 'mp4'];

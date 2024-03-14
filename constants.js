@@ -27,6 +27,7 @@
     2024.02.29 - Add LOGIN_TYPE enum.
     2024.02.29 - Moved from bluetail-domain to bluetail-globals.
     2024.03.11 - Introduce ALLOWED_FILE_PATH_CHARS constant.
+    2024.03.14 - Added listAircraftMakes GROUP_TYPE enum.
 */
 
 module.exports = {
@@ -148,5 +149,10 @@ module.exports = {
   ACCOUNT_STYLE : {
     TRADITIONAL: 'traditional',
     PARTS: 'parts',
+  },
+
+  LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
+    POPULAR: 'popular',
+    RARE: 'rare',
   },
 };

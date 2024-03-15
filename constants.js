@@ -28,6 +28,7 @@
     2024.02.29 - Moved from bluetail-domain to bluetail-globals.
     2024.03.11 - Introduce ALLOWED_FILE_PATH_CHARS constant.
     2024.03.14 - Added listAircraftMakes GROUP_TYPE enum.
+    2024.03.14 - Added ACCOUNT_STATUS enum.
 */
 
 module.exports = {
@@ -143,6 +144,12 @@ module.exports = {
     PROVISIONAL: 0,
     ACTIVE: 1,
     DEACTIVE: 2,
+  },
+  
+  // Enum
+  ACCOUNT_STATUS : {
+    ACTIVE: 'active',
+    INACTIVE: 'inactive',
   },
   
   // Enum

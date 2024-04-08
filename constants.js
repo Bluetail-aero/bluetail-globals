@@ -29,6 +29,7 @@
     2024.03.11 - Introduce ALLOWED_FILE_PATH_CHARS constant.
     2024.03.14 - Added listAircraftMakes GROUP_TYPE enum.
     2024.03.14 - Added ACCOUNT_STATUS enum.
+    2024.04.07 - Added REMINDER_TYPE enum.
 */
 
 module.exports = {
@@ -137,6 +138,26 @@ module.exports = {
     EMAIL: 1,
     RESET_PASSWORD: 2,
     FORGOT_PASSWORD: 3,
+  },
+
+  /*
+  Note:
+
+  We have 2 types of reminders for the createReminder endpoint:
+
+  1. Threshold reminders:
+    - For threshold reminders, we utilize threshold data related to aircraft, e.g., []. In this scenario, we send an email to the user based on the percentage of the threshold value.
+    Note: For threshold reminders, input validation for start_date, end_date, file_name, file_id, frequency, search word, and page is not necessary.
+
+  2. Normal reminders:
+    - These can be further categorized into:
+      a. Reminder for documents.
+      b. Normal reminder from the notification tab.
+    Note: For normal reminders created from the notifications tab, page, filename, and search word inputs are not required.
+  */
+  REMINDER_TYPE :{
+    NORMAL: 1,
+    THRESHOLD: 2,
   },
   
   // Enum

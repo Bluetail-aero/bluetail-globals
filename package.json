@@ -8,6 +8,7 @@
     "node": "16.x"
   },
   "main": "index.js",
+  "types": "bluetail-globals.d.ts",
   "scripts": {
     "lint": "eslint --cache --ext js --ext jsx ./",
     "lint:fix": "eslint --cache --fix --ext js --ext jsx ./"

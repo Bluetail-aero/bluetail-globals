@@ -30,7 +30,7 @@
     2024.03.14 - Added listAircraftMakes GROUP_TYPE enum.
     2024.03.14 - Added ACCOUNT_STATUS enum.
     2024.04.07 - Added REMINDER_TYPE enum.
-    2024.04.12 - Update SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES, and add isSupportedFileExtention(..) and isSupportedMimeType(..).
+    2024.04.12 - Update SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES, and add isSupportedFileExtension(..) and isSupportedMimeType(..).
     2024.04.12 - Add GENERIC_ERROR_MESSAGE and date format constants.
     2024.04.12 - Grandfather in an enum for the PRIVILEGES.
 */
@@ -70,7 +70,7 @@ Need help now? Email us at <support@bluetail.aero>
    * @param {string[]} supportedExtentions - An array of supported file extensions (defaults to SUPPORTED_EXTENSIONS)
    * @returns {boolean} - True if the file has a supported extension, false otherwise. If filename is undefined, null, or not a string, returns false.
    */
-  isSupportedFileExtention: (filename, supportedExtentions = this.SUPPORTED_EXTENSIONS) => {
+  isSupportedFileExtension: (filename, supportedExtentions = this.SUPPORTED_EXTENSIONS) => {
     if (!filename || typeof filename !== 'string') return false;
     const fileExtension = path.extname(filename).replace('.', '').toLowerCase();
     return supportedExtentions.includes(fileExtension);
@@ -215,11 +215,13 @@ Need help now? Email us at <support@bluetail.aero>
     PARTS: 'parts',
   },
 
+  // Enum
   LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
     POPULAR: 'popular',
     RARE: 'rare',
   },
 
+  // Enum
   PRIVILEGES: { //! Note: The string value must precisely match the key name.
     accountStatus: 'accountStatus',    
     planeStatus: 'planeStatus',

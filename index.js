@@ -21,6 +21,9 @@
 const constants = require('./constants');
 
 module.exports = {
-  // Constants
+  // This is really here for legacy code that was expecting to have to uppack the constants,
   constants,
+
+  // This exports the constants as top-level exports.
+  ...constants,
 };

@@ -30,6 +30,7 @@
     2024.03.14 - Added listAircraftMakes GROUP_TYPE enum.
     2024.03.14 - Added ACCOUNT_STATUS enum.
     2024.04.07 - Added REMINDER_TYPE enum.
+    2024.04.12 - Update SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES, and add isSupportedFileExtention(..) and isSupportedMimeType(..).
 */
 
 module.exports = {
@@ -46,8 +47,29 @@ module.exports = {
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
   // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
   
-  // These are the file extensions that are allowed to be uploaded.
-  ALLOWED_EXTENSIONS : ['pdf', 'jpg', 'png', 'jpeg', 'mp4'],
+  SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4'], // We only need to specify these in lowercase.
+  SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4'],
+
+  /**
+   * Tests if the given filename has a supported file extension.
+   * @param {string} filename - The name of the file to test.
+   * @param {string[]} supportedExtentions - An array of supported file extensions (defaults to SUPPORTED_EXTENSIONS)
+   * @returns {boolean} - True if the file has a supported extension, false otherwise. If filename is undefined, null, or not a string, returns false.
+   */
+  isSupportedFileExtention: (filename, supportedExtentions = this.SUPPORTED_EXTENSIONS) => {
+    if (!filename || typeof filename !== 'string') return false;
+    const fileExtension = path.extname(filename).replace('.', '').toLowerCase();
+    return supportedExtentions.includes(fileExtension);
+  },
+
+  /**
+   * Tests if the given mime type is supported.
+   * @param {string} filename - The name of the file to test.
+   * @param {string[]} supportedMimetypes - An array of supported mime types (defaults to SUPPORTED_MIME_TYPES)
+   * @returns {boolean} - True if the file has a supported extension, false otherwise. If filename is undefined, null, or not a string, returns false.
+   */
+  isSupportedMimeType: (mimeType, supportedMimetypes = this.SUPPORTED_MIME_TYPES) =>
+    supportedMimetypes.includes(mimeType),
   
   // Enum
   LOGBOOK_CATEGORY_TYPES : {

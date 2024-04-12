@@ -31,9 +31,17 @@
     2024.03.14 - Added ACCOUNT_STATUS enum.
     2024.04.07 - Added REMINDER_TYPE enum.
     2024.04.12 - Update SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES, and add isSupportedFileExtention(..) and isSupportedMimeType(..).
+    2024.04.12 - Add GENERIC_ERROR_MESSAGE and date format constants.
 */
 
 module.exports = {
+
+  // Generic error message to be used when an IDK error occurs.
+  GENERIC_ERROR_MESSAGE: `
+*Well, this is awkward.*
+**We're having trouble completing your request.**
+Need help now? Email us at <support@bluetail.aero>
+`,
 
   DEFAULT_FLEET_NAME : 'All Aircraft',
   
@@ -46,6 +54,11 @@ module.exports = {
   ALLOWED_FILE_PATH_CHARS : /[0-9a-zA-Z!\-_.*'()/]/g,
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
   // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
+
+// These date/time formats are used as standards across the application.
+  DATE_TIME_FORMAT: 'YYYY-MM-DD[T]HH:mm:ss',
+  DEFAULT_DATE_FORMAT: 'MM-DD-YYYY',
+  LOCAL_DEFAULT_DATE_FORMAT: 'YYYY-MM-DD',
   
   SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4'], // We only need to specify these in lowercase.
   SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4'],

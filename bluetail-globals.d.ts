@@ -1,5 +1,7 @@
 // bluetail-globals.d.ts
 
+export * from './aircraftId.d.ts';
+
 declare module 'bluetail-globals' {
   // Define constants as they appear
   const GENERIC_ERROR_MESSAGE: string;

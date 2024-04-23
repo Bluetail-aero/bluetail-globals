@@ -33,6 +33,7 @@
     2024.04.12 - Update SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES, and add isSupportedFileExtension(..) and isSupportedMimeType(..).
     2024.04.12 - Add GENERIC_ERROR_MESSAGE and date format constants.
     2024.04.12 - Grandfather in an enum for the PRIVILEGES.
+    2024.04.23 - Relocate containsIllegalCharacters and removeIllegalCharacters from fileUtils.js.
 */
 
 module.exports = {
@@ -56,7 +57,38 @@ Need help now? Email us at <support@bluetail.aero>
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
   // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
 
-// These date/time formats are used as standards across the application.
+  /**
+   * Checks if a string (usually a filename) contains any illegal characters.
+   * @param {string} someString A string to test for illegal characters.
+   * @returns null if no illegal characters are found, or an array of the unique illegal characters found.
+   */
+  containsIllegalCharacters: (someString) => {
+    if (!someString) return null;
+    if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
+    const illegalCharsInKey = someString.match(ILLEGAL_FILE_PATH_CHARS);
+    if (illegalCharsInKey == null) {
+      // No illegal characters found, so return null
+      return null;
+    }
+    // Return just the unique illegal characters found.
+    return illegalCharsInKey.filter((value, index, array) =>
+      array.indexOf(value) === index);
+  },
+
+  /**
+   * Replaces illegal characters in a string (usually a filename) with a replacement character.
+   * @param {string} someString A string to test replace illegal characters from.
+   * @param {string} replacementChar The character to replace illegal characters with. Default is '_'.
+   * @returns {string} The sanitized string.
+   */
+  removeIllegalCharacters: (someString, replacementChar = '_') => {
+    if (!someString) return null;
+    if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
+    // Replace illegal characters with '_' = any chracters NOT in this reg ex FILE_NAME_ALLOWED_CHARS
+    return someString.replace(ILLEGAL_FILE_PATH_CHARS, replacementChar);
+  },
+
+  // These date/time formats are used as standards across the application.
   DATE_TIME_FORMAT: 'YYYY-MM-DD[T]HH:mm:ss',
   DEFAULT_DATE_FORMAT: 'MM-DD-YYYY',
   LOCAL_DEFAULT_DATE_FORMAT: 'YYYY-MM-DD',

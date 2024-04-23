@@ -16,6 +16,8 @@ declare module 'bluetail-globals' {
   const SUPPORTED_MIME_TYPES: string[];
 
   // Define functions with parameters and return types
+  function containsIllegalCharacters(someString: string): null | string[];
+  function removeIllegalCharacters(someString: string, replacementChar?: string): null | string;
   function isSupportedFileExtension(filename: string, supportedExtensions?: string[]): boolean;
   function isSupportedMimeType(mimeType: string, supportedMimeTypes?: string[]): boolean;
 

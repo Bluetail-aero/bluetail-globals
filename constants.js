@@ -65,7 +65,7 @@ Need help now? Email us at <support@bluetail.aero>
   containsIllegalCharacters: (someString) => {
     if (!someString) return null;
     if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
-    const illegalCharsInKey = someString.match(ILLEGAL_FILE_PATH_CHARS);
+    const illegalCharsInKey = someString.match(this.ILLEGAL_FILE_PATH_CHARS);
     if (illegalCharsInKey == null) {
       // No illegal characters found, so return null
       return null;
@@ -85,7 +85,7 @@ Need help now? Email us at <support@bluetail.aero>
     if (!someString) return null;
     if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
     // Replace illegal characters with '_' = any chracters NOT in this reg ex FILE_NAME_ALLOWED_CHARS
-    return someString.replace(ILLEGAL_FILE_PATH_CHARS, replacementChar);
+    return someString.replace(this.ILLEGAL_FILE_PATH_CHARS, replacementChar);
   },
 
   // These date/time formats are used as standards across the application.

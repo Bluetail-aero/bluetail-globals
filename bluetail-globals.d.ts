@@ -183,5 +183,5 @@ declare module 'bluetail-globals' {
     ViewFleetStatus = 'ViewFleetStatus',
     companyStatus = 'companyStatus',
     officeCategoryStatus = 'officeCategoryStatus',
-  };
+  }
 }

@@ -52,42 +52,11 @@ Need help now? Email us at <support@bluetail.aero>
   HOLD_SHORT : 9,
   
   // These characters are not allowed in file names. They will be removed and replaced by "_".
-  ILLEGAL_FILE_PATH_CHARS : /[^0-9a-zA-Z!\-_.*'() /]/g,
+  ILLEGAL_FILE_PATH_CHARS : /[^0-9a-zA-Z!\-_.*'()/]/g,
   // These characters are allowed in file names.
-  ALLOWED_FILE_PATH_CHARS : /[0-9a-zA-Z!\-_.*'() /]/g,
+  ALLOWED_FILE_PATH_CHARS : /[0-9a-zA-Z!\-_.*'()/]/g,
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
   // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
-
-  /**
-   * Checks if a string (usually a filename) contains any illegal characters.
-   * @param {string} someString A string to test for illegal characters.
-   * @returns null if no illegal characters are found, or an array of the unique illegal characters found.
-   */
-  containsIllegalCharacters: (someString) => {
-    if (!someString) return null;
-    if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
-    const illegalCharsInKey = someString.match(this.ILLEGAL_FILE_PATH_CHARS);
-    if (illegalCharsInKey == null) {
-      // No illegal characters found, so return null
-      return null;
-    }
-    // Return just the unique illegal characters found.
-    return illegalCharsInKey.filter((value, index, array) =>
-      array.indexOf(value) === index);
-  },
-
-  /**
-   * Replaces illegal characters in a string (usually a filename) with a replacement character.
-   * @param {string} someString A string to test replace illegal characters from.
-   * @param {string} replacementChar The character to replace illegal characters with. Default is '_'.
-   * @returns {string} The sanitized string.
-   */
-  removeIllegalCharacters: (someString, replacementChar = '_') => {
-    if (!someString) return null;
-    if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
-    // Replace illegal characters with '_' = any chracters NOT in this reg ex FILE_NAME_ALLOWED_CHARS
-    return someString.replace(this.ILLEGAL_FILE_PATH_CHARS, replacementChar);
-  },
 
   // These date/time formats are used as standards across the application.
   DATE_TIME_FORMAT: 'YYYY-MM-DD[T]HH:mm:ss',
@@ -97,27 +66,6 @@ Need help now? Email us at <support@bluetail.aero>
   SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4'], // We only need to specify these in lowercase.
   SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4'],
 
-  /**
-   * Tests if the given filename has a supported file extension.
-   * @param {string} filename - The name of the file to test.
-   * @param {string[]} supportedExtentions - An array of supported file extensions (defaults to SUPPORTED_EXTENSIONS)
-   * @returns {boolean} - True if the file has a supported extension, false otherwise. If filename is undefined, null, or not a string, returns false.
-   */
-  isSupportedFileExtension: (filename, supportedExtentions = this.SUPPORTED_EXTENSIONS) => {
-    if (!filename || typeof filename !== 'string') return false;
-    const fileExtension = path.extname(filename).replace('.', '').toLowerCase();
-    return supportedExtentions.includes(fileExtension);
-  },
-
-  /**
-   * Tests if the given mime type is supported.
-   * @param {string} filename - The name of the file to test.
-   * @param {string[]} supportedMimetypes - An array of supported mime types (defaults to SUPPORTED_MIME_TYPES)
-   * @returns {boolean} - True if the file has a supported extension, false otherwise. If filename is undefined, null, or not a string, returns false.
-   */
-  isSupportedMimeType: (mimeType, supportedMimetypes = this.SUPPORTED_MIME_TYPES) =>
-    supportedMimetypes.includes(mimeType),
-  
   // Enum
   LOGBOOK_CATEGORY_TYPES : {
     LOGBOOK: 1,

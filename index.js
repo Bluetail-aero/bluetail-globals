@@ -7,11 +7,13 @@
 */
 
 const constants = require('./constants');
+const functions = require('./functions');
 const aircraftId = require('./aircraftId');
 
 // This exports the constants as top-level exports.
 module.exports = {
   ...constants,
+  ...functions,
   aircraftId,
 };
 

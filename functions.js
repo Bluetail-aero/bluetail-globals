@@ -1,4 +1,5 @@
 const {ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES} = require('./constants');
+const path = require('path');
 
   /**
    * Checks if a string (usually a filename) contains any illegal characters.

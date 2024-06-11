@@ -46,15 +46,15 @@ module.exports = {
 Need help now? Email us at <support@bluetail.aero>
 `,
 
-  DEFAULT_FLEET_NAME : 'All Aircraft',
-  
+  DEFAULT_FLEET_NAME: 'All Aircraft',
+
   // The ID of the standard "HOLD SHORT" logbook_category.
-  HOLD_SHORT : 9,
-  
+  HOLD_SHORT: 9,
+
   // These characters are not allowed in file names. They will be removed and replaced by "_".
-  ILLEGAL_FILE_PATH_CHARS : /[^0-9a-zA-Z!\-_.*'()/]/g,
+  ILLEGAL_FILE_PATH_CHARS: /[^0-9a-zA-Z!\-_.*'()/]/g,
   // These characters are allowed in file names.
-  ALLOWED_FILE_PATH_CHARS : /[0-9a-zA-Z!\-_.*'()/]/g,
+  ALLOWED_FILE_PATH_CHARS: /[0-9a-zA-Z!\-_.*'()/]/g,
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
   // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
 
@@ -62,18 +62,18 @@ Need help now? Email us at <support@bluetail.aero>
   DATE_TIME_FORMAT: 'YYYY-MM-DD[T]HH:mm:ss',
   DEFAULT_DATE_FORMAT: 'MM-DD-YYYY',
   LOCAL_DEFAULT_DATE_FORMAT: 'YYYY-MM-DD',
-  
+
   SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4'], // We only need to specify these in lowercase.
   SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4'],
 
   // Enum
-  LOGBOOK_CATEGORY_TYPES : {
+  LOGBOOK_CATEGORY_TYPES: {
     LOGBOOK: 1,
     CATEGORY: 2,
   },
-  
+
   // Enum
-  UPLOAD_TYPES : {
+  UPLOAD_TYPES: {
     COMPUTER: 1,
     GOOGLE_DRIVE: 2,
     DROPBOX: 3,
@@ -88,15 +88,15 @@ Need help now? Email us at <support@bluetail.aero>
     PUBLIC_API: 11,
     STRATOLAUNCHER: 12,
   },
-  
+
   // Enum
-  LOGIN_TYPE : {
+  LOGIN_TYPE: {
     WEB: 0,
     CHROME: 1,
   },
-  
+
   // Enum
-  ROLE_TYPES : {
+  ROLE_TYPES: {
     OWNER: 1,
     ADMIN: 2,
     CONTRIBUTOR: 3,
@@ -105,18 +105,18 @@ Need help now? Email us at <support@bluetail.aero>
     BUYER: 6,
     MRO: 7,
   },
-  
+
   // Enum
-  TRACKING_TYPES : {
+  TRACKING_TYPES: {
     UPLOAD: 1,
     DOWNLOAD: 2,
     EMAILED: 3,
     PRINTED: 4,
     SHARED: 5,
   },
-  
+
   // Enum
-  MAILED_DOC_STATUS : {
+  MAILED_DOC_STATUS: {
     PENDING: 0,
     COMPLETE: 1,
     UNIDENTIFIED: 2,
@@ -124,9 +124,9 @@ Need help now? Email us at <support@bluetail.aero>
     BLOCKED_SENDER: -2,
     NO_ATTACHMENTS: -3,
   },
-  
+
   // Enum
-  MAILED_REPLY_SENDING_TYPES : {
+  MAILED_REPLY_SENDING_TYPES: {
     DO_NOT_SEND_USER_REPLY: 0,
     EMAIL_TO_USER_SUCESSMSG: 1,
     EMAIL_TO_CS: 2,
@@ -135,9 +135,9 @@ Need help now? Email us at <support@bluetail.aero>
     EMAIL_TO_USER_FOR_SYNTAX: 5,
     EMAIL_TO_USER_FOR_DEACTIVATED_AIRCRAFT: 6,
   },
-  
+
   // Enum
-  NOTIFICATION_TYPES : {
+  NOTIFICATION_TYPES: {
     DOCUMENT_ADDED: 1,
     DOCUMENT_EDITED: 2,
     DOCUMENT_RATED: 3, // ?
@@ -149,9 +149,9 @@ Need help now? Email us at <support@bluetail.aero>
     REMOVE_USER: 9,
   },
   // TODO: These are inconsistently used throughout the backend (find "notify_type", check and replace with constants).
-  
+
   // Enum
-  TIME_BASED_TOKEN_TYPE : {
+  TIME_BASED_TOKEN_TYPE: {
     EMAIL: 1,
     RESET_PASSWORD: 2,
     FORGOT_PASSWORD: 3,
@@ -172,26 +172,26 @@ Need help now? Email us at <support@bluetail.aero>
       b. Normal reminder from the notification tab.
     Note: For normal reminders created from the notifications tab, page, filename, and search word inputs are not required.
   */
-  REMINDER_TYPE :{
+  REMINDER_TYPE: {
     NORMAL: 1,
     THRESHOLD: 2,
   },
-  
+
   // Enum
-  AIRCRAFT_SUBSCRIPTION_STATUS : {
+  AIRCRAFT_SUBSCRIPTION_STATUS: {
     PROVISIONAL: 0,
     ACTIVE: 1,
     DEACTIVE: 2,
   },
-  
+
   // Enum
-  ACCOUNT_STATUS : {
+  ACCOUNT_STATUS: {
     ACTIVE: 'active',
     INACTIVE: 'inactive',
   },
-  
+
   // Enum
-  ACCOUNT_STYLE : {
+  ACCOUNT_STYLE: {
     TRADITIONAL: 'traditional',
     PARTS: 'parts',
   },
@@ -204,13 +204,13 @@ Need help now? Email us at <support@bluetail.aero>
 
   // Enum
   PRIVILEGES: { //! Note: The string value must precisely match the key name.
-    accountStatus: 'accountStatus',    
+    accountStatus: 'accountStatus',
     planeStatus: 'planeStatus',
     paymentStatus: 'paymentStatus',
     myProfileStatus: 'myProfileStatus',
-    settingsStatus  : 'settingsStatus',
+    settingsStatus: 'settingsStatus',
     logbookStatus: 'logbookStatus',
-    keywordsStatus  : 'keywordsStatus',
+    keywordsStatus: 'keywordsStatus',
     uploadsStatus: 'uploadsStatus',
     integrationStatus: 'integrationStatus',
     esignatureStatus: 'esignatureStatus',
@@ -258,5 +258,5 @@ Need help now? Email us at <support@bluetail.aero>
     ViewFleetStatus: 'ViewFleetStatus',
     companyStatus: 'companyStatus',
     officeCategoryStatus: 'officeCategoryStatus',
-  },  
+  },
 };

@@ -8,7 +8,6 @@
     "node": "16.x"
   },
   "main": "index.js",
-  "types": "bluetail-globals.d.ts",
   "scripts": {
     "lint": "eslint --cache --ext js --ext jsx ./",
     "lint:fix": "eslint --cache --fix --ext js --ext jsx ./"
@@ -22,7 +21,6 @@
     "eslint-plugin-mocha": "^10.1.0",
     "mocha": "^10.2.0",
     "sinon": "^17.0.1",
-    "sinon-chai": "^3.7.0",
-    "typescript": "^5.4.4"
+    "sinon-chai": "^3.7.0"
   }
 }

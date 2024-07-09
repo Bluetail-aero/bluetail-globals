@@ -127,7 +127,7 @@ const countryCodes = {
 /**
  * Parse and validate a tailnumber, split it into country_code and reg_n_number and country
  * @param {string} tailnumber - Some internationalized tailnumber that incldues the country code.
- * @retuns {object} - { country_code, reg_n_number, region }
+ * @retuns {object} - { country_code, reg_n_number, region, fullTailNumber }
  */
 exports.parseTailNumber = (tailnumber) => {
   for (let code of countryCodes.codes) {    

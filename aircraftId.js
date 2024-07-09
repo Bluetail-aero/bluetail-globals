@@ -3,6 +3,7 @@
     aircraftId2Tailnumber,
     isValidAircraftId,
     newAircraftId,
+    parseTailNumber,
   }
 
   CHANGE HISTORY:
@@ -42,3 +43,13 @@ exports.isValidAircraftId = (aircraftId) => {
  */
 exports.newAircraftId = (country_code, reg_n_number) =>
   ({ country_code, reg_n_number });
+
+/**
+ *
+ * @param {string} tailnumber - Some internationalized tailnumber that includes the country code.
+ * @returns {object} - { country_code, reg_n_number
+ */
+exports.parseTailNumber = (tailnumber) =>
+// TODO: https://bluetail.atlassian.net/browse/BT-5266
+
+  null;

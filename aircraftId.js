@@ -10,6 +10,7 @@
     2024.02.22 - Create this module with the tailnumber and isValidAircraftId functions.
     2024.03.28 - Rename tailnumber to aircraftId2Tailnumber to avoid name collisions elsewhere; introduced newAircraftId function.
     2024.04.23 - Relocated this from bluetail-domain to bluetail-globals.
+    2024.07.09 - Added implementation of parseTailNumber
 
   TODOS:
     -
@@ -130,7 +131,7 @@ const countryCodes = {
 /**
  * Parse and validate a tailnumber, split it into country_code and reg_n_number and country
  * @param {string} tailnumber - Some internationalized tailnumber that incldues the country code.
- * @retuns {object} - { country_code, reg_n_number, region, fullTailNumber }
+ * @retuns {object} - { country_code, reg_n_number, region, fullTailNumber }; returns null if the country-code of hte tailnumber is not recognized.
  */
 exports.parseTailNumber = (tailnumber) => {
   for (const code of countryCodes.codes) {

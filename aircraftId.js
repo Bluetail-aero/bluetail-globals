@@ -46,82 +46,85 @@ exports.newAircraftId = (country_code, reg_n_number) =>
 
 const countryCodes = {
   codes: [
-    "N", // United States
-    "VH-", // Australia
-    "OE-", // Austria
-    "OO-", // Belgium
-    "VP-B, VQ-B", // Bermuda
-    "PP-, PT-, PR-, PU-, PS-", // Brazil
-    "C-", // Canada
-    "B-", // China
-    "OY-", // Denmark
-    "F-", // France
-    "D-", // Germany
-    "SX-", // Greece
-    "VT-", // India
-    "EI-, EJ-", // Ireland
-    "I-", // Italy
-    "JA, JR", // Japan
-    "LX-", // Luxembourg
-    "9H-", // Malta
-    "XA-, XB-, XC-", // Mexico
-    "PH-", // Netherlands
-    "ZK-, ZL-, ZM-", // New Zealand
-    "RP-", // Philippines
-    "CS-", // Portugal
-    "RA-, RF-", // Russia
-    "9V-", // Singapore
-    "ZS-, ZT-, ZU-", // South Africa
-    "EC-, EM-", // Spain
-    "HB-", // Switzerland
-    "G-", // United Kingdom
+    'N', // United States
+    'VH-', // Australia
+    'OE-', // Austria
+    'OO-', // Belgium
+    'VP-B, VQ-B', // Bermuda
+    'PP-, PT-, PR-, PU-, PS-', // Brazil
+    'C-', // Canada
+    'B-', // China
+    'OY-', // Denmark
+    'F-', // France
+    'D-', // Germany
+    'SX-', // Greece
+    'VT-', // India
+    'EI-, EJ-', // Ireland
+    'I-', // Italy
+    'JA, JR', // Japan
+    'LX-', // Luxembourg
+    '9H-', // Malta
+    'XA-, XB-, XC-', // Mexico
+    'PH-', // Netherlands
+    'ZK-', // New Zealand
+    'ZL-', // New Zealand
+    'ZM-', // New Zealand
+    'RP-', // Philippines
+    'CS-', // Portugal
+    'RA-, RF-', // Russia
+    '9V-', // Singapore
+    'ZS-, ZT-, ZU-', // South Africa
+    'EC-, EM-', // Spain
+    'HB-', // Switzerland
+    'G-', // United Kingdom
   // Sort country codes by length in descending order to handle subset clashes
-  ].sort((a, b) => b.length - a.length),
+  ].sort((a, b) =>
+    b.length - a.length),
   countryByCode: {
-    N: "United States",
-    ["VH-"]: "Australia",
-    ["OE-"]: "Austria",
-    ["OO-"]: "Belgium",
-    ["VQ-B"]: "Bermuda",
-    ["VP-B"]: "Bermuda",
-    ["PP-"]: "Brazil",
-    ["PT-"]: "Brazil",
-    ["PR-"]: "Brazil",
-    ["PU-"]: "Brazil",
-    ["PS-"]: "Brazil",
-    ["C-"]: "Canada",
-    ["B-"]: "China",
-    ["OY-"]: "Denmark",
-    ["F-"]: "France",
-    ["D-"]: "Germany",
-    ["SX-"]: "Greece",
-    ["VT-"]: "India",
-    ["EI-"]: "Ireland",
-    ["EJ-"]: "Ireland",
-    ["I-"]: "Italy",
-    ["JA, JR"]: "Japan",
-    ["LX-"]: "Luxembourg",
-    ["9H-"]: "Malta",
-    ["XA-"]: "Mexico",
-    ["XB-"]: "Mexico",
-    ["XC-"]: "Mexico",
-    ["PH-"]: "Netherlands",
-    ["ZK-"]: "New Zealand",
-    ["ZL-"]: "New Zealand",
-    ["ZM-"]: "New Zealand",
-    ["RP-"]: "Philippines",
-    ["CS-"]: "Portugal",
-    ["RA-"]: "Russia",
-    ["RF-"]: "Russia",
-    ["9V-"]: "Singapore",
-    ["ZS-"]: "South Africa",
-    ["ZT-"]: "South Africa",
-    ["ZU-"]: "South Africa",
-    ["EC-"]: "Spain",
-    ["EM-"]: "Spain",
-    ["HB-"]: "Switzerland",
-    ["G-"]: "United Kingdom",
-  }
+    N: 'United States',
+    'VH-': 'Australia',
+    'OE-': 'Austria',
+    'OO-': 'Belgium',
+    'VQ-B': 'Bermuda',
+    'VP-B': 'Bermuda',
+    'PP-': 'Brazil',
+    'PT-': 'Brazil',
+    'PR-': 'Brazil',
+    'PU-': 'Brazil',
+    'PS-': 'Brazil',
+    'C-': 'Canada',
+    'B-': 'China',
+    'OY-': 'Denmark',
+    'F-': 'France',
+    'D-': 'Germany',
+    'SX-': 'Greece',
+    'VT-': 'India',
+    'EI-': 'Ireland',
+    'EJ-': 'Ireland',
+    'I-': 'Italy',
+    'JA, JR': 'Japan',
+    'LX-': 'Luxembourg',
+    '9H-': 'Malta',
+    'XA-': 'Mexico',
+    'XB-': 'Mexico',
+    'XC-': 'Mexico',
+    'PH-': 'Netherlands',
+    'ZK-': 'New Zealand',
+    'ZL-': 'New Zealand',
+    'ZM-': 'New Zealand',
+    'RP-': 'Philippines',
+    'CS-': 'Portugal',
+    'RA-': 'Russia',
+    'RF-': 'Russia',
+    '9V-': 'Singapore',
+    'ZS-': 'South Africa',
+    'ZT-': 'South Africa',
+    'ZU-': 'South Africa',
+    'EC-': 'Spain',
+    'EM-': 'Spain',
+    'HB-': 'Switzerland',
+    'G-': 'United Kingdom',
+  },
 };
 
 /**
@@ -130,16 +133,16 @@ const countryCodes = {
  * @retuns {object} - { country_code, reg_n_number, region, fullTailNumber }
  */
 exports.parseTailNumber = (tailnumber) => {
-  for (let code of countryCodes.codes) {    
-      if (tailnumber.startsWith(code)) {
-        return {
-          region: countryCodes.countryByCode[code],
-          country_code: code,
-          reg_n_number: tailnumber.slice(code.length),
-          fullTailNumber: tailnumber,
-        };
-      }
+  for (const code of countryCodes.codes) {
+    if (tailnumber.startsWith(code)) {
+      return {
+        region: countryCodes.countryByCode[code],
+        country_code: code,
+        reg_n_number: tailnumber.slice(code.length),
+        fullTailNumber: tailnumber,
+      };
+    }
   }
 
   return null;
-}
+};

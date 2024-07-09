@@ -3,6 +3,7 @@
     aircraftId2Tailnumber,
     isValidAircraftId,
     newAircraftId,
+    parseTailNumber,
   }
 
   CHANGE HISTORY:

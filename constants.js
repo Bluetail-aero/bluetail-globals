@@ -35,6 +35,7 @@
     2024.04.12 - Grandfather in an enum for the PRIVILEGES.
     2024.04.23 - Relocate containsIllegalCharacters and removeIllegalCharacters from fileUtils.js.
     2024.04.25 - Spaces should also be in the illegal character list.
+    2024.07.09 - Expanded the list of SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES to include doc,docx,xls,xlsx and gif.
 */
 
 module.exports = {
@@ -63,8 +64,10 @@ Need help now? Email us at <support@bluetail.aero>
   DEFAULT_DATE_FORMAT: 'MM-DD-YYYY',
   LOCAL_DEFAULT_DATE_FORMAT: 'YYYY-MM-DD',
 
-  SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4'], // We only need to specify these in lowercase.
-  SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4'],
+  SUPPORTED_EXTENSIONS: ['pdf', 'jpg', 'png', 'jpeg', 'mp4', 'doc', 'docx', 'xls', 'xlsx', 'gif'], // We only need to specify these in lowercase.
+  SUPPORTED_MIME_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'video/mp4', 'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'image/gif',
+  ],
 
   // Enum
   LOGBOOK_CATEGORY_TYPES: {

@@ -1,4 +1,4 @@
-const {ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES} = require('./constants');
+const { ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES } = require('./constants');
 
 /*
   exports {
@@ -39,7 +39,7 @@ exports.containsIllegalCharacters = function (someString) {
  * @param {string} replacementChar The character to replace illegal characters with. Default is '_'.
  * @returns {string} The sanitized string.
  */
-exports.removeIllegalCharacters= function (someString, replacementChar = '_') {
+exports.removeIllegalCharacters = function (someString, replacementChar = '_') {
   if (!someString) return null;
   if (!someString || typeof someString !== 'string') throw new Error('Expected someString to be a string');
   // Replace illegal characters with '_' = any chracters NOT in this reg ex FILE_NAME_ALLOWED_CHARS

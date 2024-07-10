@@ -51,8 +51,8 @@ const countryCodes = {
     'VH-', // Australia
     'OE-', // Austria
     'OO-', // Belgium
-    'VP-B, VQ-B', // Bermuda
-    'PP-, PT-, PR-, PU-, PS-', // Brazil
+    'VP-B', 'VQ-B', // Bermuda
+    'PP-', 'PT-', 'PR-', 'PU-', 'PS-', // Brazil
     'C-', // Canada
     'B-', // China
     'OY-', // Denmark
@@ -60,22 +60,20 @@ const countryCodes = {
     'D-', // Germany
     'SX-', // Greece
     'VT-', // India
-    'EI-, EJ-', // Ireland
+    'EI-', 'EJ-', // Ireland
     'I-', // Italy
-    'JA, JR', // Japan
+    'JA', 'JR', // Japan
     'LX-', // Luxembourg
     '9H-', // Malta
-    'XA-, XB-, XC-', // Mexico
+    'XA-', 'XB-', 'XC-', // Mexico
     'PH-', // Netherlands
-    'ZK-', // New Zealand
-    'ZL-', // New Zealand
-    'ZM-', // New Zealand
+    'ZK-', 'ZL-', 'ZM-', // New Zealand
     'RP-', // Philippines
     'CS-', // Portugal
-    'RA-, RF-', // Russia
+    'RA-', 'RF-', // Russia
     '9V-', // Singapore
-    'ZS-, ZT-, ZU-', // South Africa
-    'EC-, EM-', // Spain
+    'ZS-', 'ZT-', 'ZU-', // South Africa
+    'EC-', 'EM-', // Spain
     'HB-', // Switzerland
     'G-', // United Kingdom
   // Sort country codes by length in descending order to handle subset clashes

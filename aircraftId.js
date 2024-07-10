@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 /*
   exports {
     aircraftId2Tailnumber,
@@ -92,21 +93,21 @@ const countryByCode = {
   'G-': 'United Kingdom',
 };
 
-const countryCodes = Object.keys(countryByCode).sort((a, b) => b.length - a.length);
+const countryCodes = Object.keys(countryByCode).sort((a, b) =>
+  b.length - a.length);
 
 /**
  * Parse and validate a tailnumber, split it into country_code and reg_n_number and country
  * @param {string} tailnumber - Some internationalized tailnumber that incldues the country code.
- * @retuns {object} - { country_code, reg_n_number, region, fullTailNumber }; returns null if the country-code of hte tailnumber is not recognized.
+ * @returns {object} - { country_code, reg_n_number, region } or null if the country_code of the tailnumber is not recognized.
  */
 exports.parseTailNumber = (tailnumber) => {
   for (const code of countryCodes) {
     if (tailnumber.startsWith(code)) {
       return {
-        region: countryByCode[code],
         country_code: code,
         reg_n_number: tailnumber.slice(code.length),
-        fullTailNumber: tailnumber,
+        region: countryByCode[code],
       };
     }
   }

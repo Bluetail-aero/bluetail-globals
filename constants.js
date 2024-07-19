@@ -53,7 +53,7 @@ Need help now? Email us at <support@bluetail.aero>
   HOLD_SHORT: 9,
 
   // These characters are not allowed in file names. They will be removed and replaced by "_".
-  ILLEGAL_FILE_PATH_CHARS: /[^0-9a-zA-Z!\-_.*'()/]/g,
+  ILLEGAL_FILE_PATH_CHARS: /[^0-9a-zA-Z!\-_.*"()/]/g,
   // These characters are allowed in file names.
   ALLOWED_FILE_PATH_CHARS: /[0-9a-zA-Z!\-_.*'()/]/g,
   // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.

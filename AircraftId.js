@@ -102,4 +102,4 @@ class AircraftId {
   }
 }
 
-exports.AircraftId = AircraftId;
+module.exports = AircraftId;

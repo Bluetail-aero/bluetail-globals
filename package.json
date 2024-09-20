@@ -4,8 +4,8 @@
   "description": "Shared package/library conatins shit we can share across the FE and BE to keep everyone synced.",
   "license": "UNLICENSED",
   "repository": "https://github.com/Bluetail-aero/bluetail-global.git",
-  "engine": {
-    "node": "16.x"
+  "engines": {
+    "node": ">=16"
   },
   "main": "index.js",
   "scripts": {

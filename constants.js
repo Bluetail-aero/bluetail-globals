@@ -36,6 +36,7 @@
     2024.04.23 - Relocate containsIllegalCharacters and removeIllegalCharacters from fileUtils.js.
     2024.04.25 - Spaces should also be in the illegal character list.
     2024.07.09 - Expanded the list of SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES to include doc,docx,xls,xlsx and gif.
+    2024.10.02 - Remove LOGIN_TYPE as it is no longer required.
 */
 
 module.exports = {
@@ -90,12 +91,6 @@ Need help now? Email us at <support@bluetail.aero>
     EMAIL: 10,
     PUBLIC_API: 11,
     STRATOLAUNCHER: 12,
-  },
-
-  // Enum
-  LOGIN_TYPE: {
-    WEB: 0,
-    CHROME: 1,
   },
 
   // Enum

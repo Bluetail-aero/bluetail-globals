@@ -5,7 +5,7 @@
 
   USAGE EXAMPLE:
 
-    const aircraftId = AircraftId.newAircraftId('N', '12345');
+    const aircraftId = new AircraftId('N', '12345');
     console.log(aircraftId.toTailNumber()); // "N12345"
 
     const parsedTailNumber = AircraftId.parseTailNumber('N12345');

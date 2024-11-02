@@ -37,6 +37,7 @@
     2024.04.25 - Spaces should also be in the illegal character list.
     2024.07.09 - Expanded the list of SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES to include doc,docx,xls,xlsx and gif.
     2024.10.02 - Remove LOGIN_TYPE as it is no longer required.
+    2024.11.01 - Add PRIVILEGE_CATEGORY enum.
 */
 
 module.exports = {
@@ -102,6 +103,14 @@ Need help now? Email us at <support@bluetail.aero>
     GUEST: 5,
     BUYER: 6,
     MRO: 7,
+  },
+
+  // Enum
+  PRIVILEGE_CATEGORY: {
+    Admin: 'Admin',
+    Content: 'Content',
+    Viewing: 'Viewing',
+    Sharing: 'Sharing',
   },
 
   // Enum

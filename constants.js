@@ -38,6 +38,7 @@
     2024.07.09 - Expanded the list of SUPPORTED_EXTENSIONS and SUPPORTED_MIME_TYPES to include doc,docx,xls,xlsx and gif.
     2024.10.02 - Remove LOGIN_TYPE as it is no longer required.
     2024.11.01 - Add Compliance priviledges.
+    2024.11.05 - Remove unused PRIVILEGES.keywordsStatus
 */
 
 module.exports = {
@@ -234,7 +235,6 @@ Need help now? Email us at <support@bluetail.aero>
     groupsStatus: 'groupsStatus',
     integrationStatus: 'integrationStatus',
     integreateApps: 'integreateApps',
-    keywordsStatus: 'keywordsStatus',
     logbookStatus: 'logbookStatus',
     logoutStatus: 'logoutStatus',
     myProfileStatus: 'myProfileStatus',

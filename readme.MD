@@ -4,7 +4,7 @@ Everything in this folder is intended to be sharable across both FE and BE proje
 
 ```
 "dependencies": {
-  "bluetail-globals": "github:Bluetail-aero/bluetail-globals"
+  "bluetail-globals": "github:Bluetail-aero/bluetail-globals#0.3.0"
 }
 ```
 

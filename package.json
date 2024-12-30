@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "repository": "https://github.com/Bluetail-aero/bluetail-global.git",
   "engines": {
-    "node": ">=16"
+    "node": ">=10"
   },
   "main": "index.js",
   "scripts": {

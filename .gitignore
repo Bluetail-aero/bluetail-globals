@@ -8,6 +8,7 @@
 
 # misc
 .DS_Store
+.eslintcache
 
 # Env var files other than the sample
 .env*

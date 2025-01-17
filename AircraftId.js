@@ -13,6 +13,7 @@
 
   CHANGE HISTORY:
     2024.08.22 - Initial draft. Created by converting the legacy functions to a class.
+    2025.01.17 - Remove magic strings.
 
   TODOS:
     -
@@ -79,8 +80,8 @@ class AircraftId {
 
   static isValidAircraftId(aircraftId) {
     if (!aircraftId) return false;
-    if (!aircraftId.reg_n_number || typeof aircraftId.reg_n_number !== 'string' || aircraftId.reg_n_number.trim().length === 0) return false;
-    if (!aircraftId.country_code || typeof aircraftId.country_code !== 'string' || aircraftId.country_code.trim().length === 0) return false;
+    if (!aircraftId.reg_n_number || typeof aircraftId.reg_n_number !== 'string' || aircraftId.reg_n_number.trim() === '') return false;
+    if (!aircraftId.country_code || typeof aircraftId.country_code !== 'string' || aircraftId.country_code.trim() === '') return false;
     return true;
   }
 

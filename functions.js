@@ -1,4 +1,6 @@
-const { ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES } = require('./constants');
+const {
+  ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES, ACCOUNT_STYLE,
+} = require('./constants');
 
 /*
   exports {
@@ -11,6 +13,7 @@ const { ILLEGAL_FILE_PATH_CHARS, SUPPORTED_EXTENSIONS, SUPPORTED_MIME_TYPES } = 
   CHANGE HISTORY:
     2024.05.31 - Remove the need for the 'path' module so this will work in a browser.
     2025.01.17 - Fix lint warnings "Unexpected unnamed function"
+    2025.01.24 - Add accountStyleVerbage function.
 
   TODOS:
     -
@@ -67,3 +70,20 @@ exports.isSupportedFileExtension = (filename, supportedExtentions = SUPPORTED_EX
  */
 exports.isSupportedMimeType = (mimeType, supportedMimetypes = SUPPORTED_MIME_TYPES) =>
   supportedMimetypes.includes(mimeType);
+
+/**
+ * Returns the appropriate style verbiage based on the account style.
+ * @param {ACCOUNT_STYLE} accountStyle The account style.
+ * @param {string} tradStyle The traditional style verbiage.
+ * @param {string} partStyle The parts style verbiage.
+ * @returns {string} The appropriate style verbiage.
+ */
+exports.accountStyleVerbage = (accountStyle, tradStyle, partStyle) => {
+  switch (accountStyle) {
+    case ACCOUNT_STYLE.PARTS:
+      return partStyle;
+    case ACCOUNT_STYLE.TRADITIONAL:
+    default:
+      return tradStyle;
+  }
+};

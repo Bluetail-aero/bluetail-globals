@@ -73,12 +73,16 @@ exports.isSupportedMimeType = (mimeType, supportedMimetypes = SUPPORTED_MIME_TYP
 
 /**
  * Returns the appropriate style verbiage based on the account style.
- * @param {ACCOUNT_STYLE} accountStyle The account style.
+ * @param {ACCOUNT_STYLE | IAuthenticatedUser} accountStyle  Either the account_style string, or the authenticatedUser object. This supports us passing in `res.locals.authenticatedUser` (in the backend) or the account_style string (in the frontent).
  * @param {string} tradStyle The traditional style verbiage.
  * @param {string} partStyle The parts style verbiage.
  * @returns {string} The appropriate style verbiage.
  */
-exports.accountStyleVerbage = (accountStyle, tradStyle, partStyle) => {
+exports.accountStyleVerbage = (authenticatedUser_or_accountStyle, tradStyle, partStyle) => {
+  // This supports us passing in `res.locals.authenticatedUser` (in the backend)
+  const accountStyle = typeof authenticatedUser_or_accountStyle === 'string'
+    ? authenticatedUser_or_accountStyle
+    : authenticatedUser_or_accountStyle.company.account_style;
   switch (accountStyle) {
     case ACCOUNT_STYLE.PARTS:
       return partStyle;

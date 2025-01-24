@@ -13,7 +13,7 @@ const {
   CHANGE HISTORY:
     2024.05.31 - Remove the need for the 'path' module so this will work in a browser.
     2025.01.17 - Fix lint warnings "Unexpected unnamed function"
-    2025.01.24 - Add accountStyleVerbage function.
+    2025.01.24 - Add accountStyleText function.
 
   TODOS:
     -
@@ -78,7 +78,7 @@ exports.isSupportedMimeType = (mimeType, supportedMimetypes = SUPPORTED_MIME_TYP
  * @param {string} partStyle The parts style verbiage.
  * @returns {string} The appropriate style verbiage.
  */
-exports.accountStyleVerbage = (authenticatedUser_or_accountStyle, tradStyle, partStyle) => {
+exports.accountStyleText = (authenticatedUser_or_accountStyle, tradStyle, partStyle) => {
   // This supports us passing in `res.locals.authenticatedUser` (in the backend)
   const accountStyle = typeof authenticatedUser_or_accountStyle === 'string'
     ? authenticatedUser_or_accountStyle

@@ -82,7 +82,7 @@ exports.accountStyleVerbage = (authenticatedUser_or_accountStyle, tradStyle, par
   // This supports us passing in `res.locals.authenticatedUser` (in the backend)
   const accountStyle = typeof authenticatedUser_or_accountStyle === 'string'
     ? authenticatedUser_or_accountStyle
-    : authenticatedUser_or_accountStyle.company.account_style;
+    : authenticatedUser_or_accountStyle.company.style;
   switch (accountStyle) {
     case ACCOUNT_STYLE.PARTS:
       return partStyle;

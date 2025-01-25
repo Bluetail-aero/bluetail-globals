@@ -39,6 +39,7 @@
     2024.10.02 - Remove LOGIN_TYPE as it is no longer required.
     2024.11.01 - Add Compliance priviledges.
     2024.11.05 - Remove unused PRIVILEGES.keywordsStatus
+    2025.01.24 - Add the AIRCRAFT_ASSIGNMENT_METHOD enum and provided jsdoc for all the enums exported.
 */
 
 module.exports = {
@@ -72,13 +73,13 @@ Need help now? Email us at <support@bluetail.aero>
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'image/gif',
   ],
 
-  // Enum
+  /** Enum defining the types of logbook/category supported. */
   LOGBOOK_CATEGORY_TYPES: {
     LOGBOOK: 1,
     CATEGORY: 2,
   },
 
-  // Enum
+  /** Enum defining the different upload (source) types */
   UPLOAD_TYPES: {
     COMPUTER: 1,
     GOOGLE_DRIVE: 2,
@@ -95,7 +96,14 @@ Need help now? Email us at <support@bluetail.aero>
     STRATOLAUNCHER: 12,
   },
 
-  // Enum
+  /** Enum defining the supported aircraft assignment methods for users. */
+  AIRCRAFT_ASSIGNMENT_METHOD: {
+    ALL: 'all',
+    FLEET: 'fleet',
+    AIRCRAFT: 'aircraft',
+  },
+
+  /** Enum defining the system's supported role types */
   ROLE_TYPES: {
     OWNER: 1,
     ADMIN: 2,
@@ -106,7 +114,7 @@ Need help now? Email us at <support@bluetail.aero>
     MRO: 7,
   },
 
-  // Enum
+  /** Enum defining the system's supported tracked-event types */
   TRACKING_TYPES: {
     UPLOAD: 1,
     DOWNLOAD: 2,
@@ -115,7 +123,7 @@ Need help now? Email us at <support@bluetail.aero>
     SHARED: 5,
   },
 
-  // Enum
+  /** Enum defining the supported statuses for an imported email document */
   MAILED_DOC_STATUS: {
     PENDING: 0,
     COMPLETE: 1,
@@ -125,7 +133,7 @@ Need help now? Email us at <support@bluetail.aero>
     NO_ATTACHMENTS: -3,
   },
 
-  // Enum
+  /** Enum defining the types of reply the system can send to people who emailed us documents */
   MAILED_REPLY_SENDING_TYPES: {
     DO_NOT_SEND_USER_REPLY: 0,
     EMAIL_TO_USER_SUCESSMSG: 1,
@@ -136,7 +144,7 @@ Need help now? Email us at <support@bluetail.aero>
     EMAIL_TO_USER_FOR_DEACTIVATED_AIRCRAFT: 6,
   },
 
-  // Enum
+  /** Enum defining the types of notifications the system can send */
   NOTIFICATION_TYPES: {
     DOCUMENT_ADDED: 1,
     DOCUMENT_EDITED: 2,
@@ -150,47 +158,27 @@ Need help now? Email us at <support@bluetail.aero>
   },
   // TODO: These are inconsistently used throughout the backend (find "notify_type", check and replace with constants).
 
-  // Enum
+  /** Enum defining the types of time-based-tokens that the system can generate. */
   TIME_BASED_TOKEN_TYPE: {
     EMAIL: 1,
     RESET_PASSWORD: 2,
     FORGOT_PASSWORD: 3,
   },
 
-  /*
-  Note:
-
-  We have 2 types of reminders for the createReminder endpoint:
-
-  1. Threshold reminders:
-    - For threshold reminders, we utilize threshold data related to aircraft, e.g., []. In this scenario, we send an email to the user based on the percentage of the threshold value.
-    Note: For threshold reminders, input validation for start_date, end_date, file_name, file_id, frequency, search word, and page is not necessary.
-
-  2. Normal reminders:
-    - These can be further categorized into:
-      a. Reminder for documents.
-      b. Normal reminder from the notification tab.
-    Note: For normal reminders created from the notifications tab, page, filename, and search word inputs are not required.
-  */
-  REMINDER_TYPE: {
-    NORMAL: 1,
-    THRESHOLD: 2,
-  },
-
-  // Enum
+  /** Enum defining the system's supported aircraft subscription statuses */
   AIRCRAFT_SUBSCRIPTION_STATUS: {
     PROVISIONAL: 0,
     ACTIVE: 1,
     DEACTIVE: 2,
   },
 
-  // Enum
+  /** Enum defining the system's supported account statuses */
   ACCOUNT_STATUS: {
     ACTIVE: 'active',
     INACTIVE: 'inactive',
   },
 
-  // Enum
+  /** Enum defining the system's supported account styles */
   ACCOUNT_STYLE: {
     TRADITIONAL: 'traditional',
     PARTS: 'parts',
@@ -202,7 +190,7 @@ Need help now? Email us at <support@bluetail.aero>
     RARE: 'rare',
   },
 
-  // Enum
+  /** Enum defining the system's supported privileges (privileges are bestowed on users via their role) */
   PRIVILEGES: { //! Note: The string value must precisely match the key name.
     AddNotificationStatus: 'AddNotificationStatus',
     AddcommentStatus: 'AddcommentStatus',

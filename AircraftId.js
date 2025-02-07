@@ -5,6 +5,7 @@
     2025.01.17 - Remove magic strings.
     2025.02.07 - Refined the class and added JSDoc comments. Added static aircraftId2Tailnumber and made countryByCode and countryCodes private.
                - Enhanced isValidAircraftId
+               - Added support for some crap country codes that made it into production :/
 
   TODOS:
     - Convert this to Typescript one day.
@@ -23,9 +24,13 @@
  */
 class AircraftId {
   static #countryByCode = {
+    'OE': 'DO NOT USE - Supporting some crap data.',
+    'VQ-': 'DO NOT USE - Supporting some crap data.  Use VQ-B instead.',
+    'C6': 'DO NOT USE - Supporting some crap data.  Use C6- instead.',
     'N': 'United States',
     'VH-': 'Australia',
     'OE-': 'Austria',
+    'C6-': 'Bahamas',
     'OO-': 'Belgium',
     'VQ-B': 'Bermuda',
     'VP-B': 'Bermuda',

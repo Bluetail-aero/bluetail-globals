@@ -79,8 +79,9 @@ class AircraftId {
    * @throws {Error} If the provided Aircraft ID is invalid.
    */
   constructor(country_code, reg_n_number) {
-    if (!AircraftId.isValidAircraftId({ country_code, reg_n_number })) {
-      throw new Error(`Invalid aircraft ID: country_code="${country_code}", reg_n_number="${reg_n_number}"`);
+    const { isValid, errorMessage } = AircraftId.isValidAircraftId({ country_code, reg_n_number });
+    if (!isValid) {
+      throw new Error(`Invalid aircraft ID: {"${country_code}", "${reg_n_number}"} - ${errorMessage}`);
     }
     this.country_code = country_code.toUpperCase();
     this.reg_n_number = reg_n_number.toUpperCase();
@@ -117,8 +118,7 @@ class AircraftId {
       return { isValid: false, errorMessage: 'reg_n_number should not contain the country_code prefix' };
     }
 
-    const tailnumber = AircraftId.aircraftId2Tailnumber(aircraftId);
-    if (AircraftId.parseTailNumber(tailnumber) === null) {
+    if (!(aircraftId.country_code in AircraftId.#countryByCode)) {
       return { isValid: false, errorMessage: 'country_code is not a valid country code' };
     }
 
@@ -160,8 +160,9 @@ class AircraftId {
    * AircraftId.aircraftId2Tailnumber({ country_code: 'N', reg_n_number: '12345' });
    */
   static aircraftId2Tailnumber(aircraftId) {
-    if (!AircraftId.isValidAircraftId(aircraftId)) {
-      throw new Error('Invalid aircraft ID object');
+    const { isValid, errorMessage } = AircraftId.isValidAircraftId(aircraftId);
+    if (!isValid) {
+      throw new Error(`Invalid aircraft ID: {"${country_code}", "${reg_n_number}"} - ${errorMessage}`);
     }
     return `${aircraftId.country_code}${aircraftId.reg_n_number}`;
   }
@@ -180,29 +181,3 @@ class AircraftId {
 }
 
 module.exports = AircraftId;
-
-// TODO: This function is a localized "upgrade" to the isValidAircraftId in bluetail-globals.  It could be migrated there in the future.
-function isValidAircraftId(aircraftId) {
-  // aicraftId should be an object
-  if (!aircraftId) { return { isValid: false, errorMessage: 'Aircraft ID is null' }; }
-
-  // with a reg_n_number property, that is a non empty string.
-  if (!aircraftId.reg_n_number || typeof aircraftId.reg_n_number !== 'string' || aircraftId.reg_n_number.trim().length === 0) { return { isValid: false, errorMessage: 'Bad form: missing reg_n_number' }; }
-
-  // with a country_code property, that is a non empty string.
-  if (!aircraftId.country_code || typeof aircraftId.country_code !== 'string' || aircraftId.country_code.trim().length === 0) { return { isValid: false, errorMessage: 'Bad form: missing country_code' }; }
-
-  // reg_n_number should only contain letters and numbers.
-  if (!/^[a-zA-Z0-9]+$/.test(aircraftId.reg_n_number)) { return { isValid: false, errorMessage: 'reg_n_number contains invalid characters' }; }
-
-  // reg_n_number should not start the same as the country_code.
-  if (aircraftId.reg_n_number.startsWith(aircraftId.country_code)) { return { isValid: false, errorMessage: 'reg_n_number should not contain the country_code prefix' }; }
-
-  // country_code should be a valid country code.
-  // We can test using parseTailNumber to see if returns null or not.
-  const tailnumber = AircraftId.aircraftId2Tailnumber(aircraftId);
-  if (AircraftId.parseTailNumber(tailnumber) === null) { return { isValid: false, errorMessage: 'country_code is not a valid country code' }; }
-
-  // AircraftId looks valid.
-  return { isValid: true, errorMessage: null };
-}

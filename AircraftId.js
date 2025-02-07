@@ -167,7 +167,7 @@ class AircraftId {
   static aircraftId2Tailnumber(aircraftId) {
     const { isValid, errorMessage } = AircraftId.isValidAircraftId(aircraftId);
     if (!isValid) {
-      throw new Error(`Invalid aircraft ID: {"${country_code}", "${reg_n_number}"} - ${errorMessage}`);
+      throw new Error(`Invalid aircraft ID: {"${aircraftId.country_code}", "${aircraftId.reg_n_number}"} - ${errorMessage}`);
     }
     return `${aircraftId.country_code}${aircraftId.reg_n_number}`;
   }

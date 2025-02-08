@@ -1,5 +1,7 @@
+"use strict";
 /* eslint-disable no-magic-numbers */
-
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
 /*
   A valueable resource that centralizes all the constants and enums used across the Bluetail codebase.
 
@@ -42,117 +44,90 @@
     2025.01.24 - Add the AIRCRAFT_ASSIGNMENT_METHOD enum and provided jsdoc for all the enums exported.
     2025.02.07 - Converting this package to use typescript.
 */
-
-
 /** Generic error message to be used when an IDK error occurs.*/
-export const GENERIC_ERROR_MESSAGE: string = `
+exports.GENERIC_ERROR_MESSAGE = `
 *Well, this is awkward.*
 **We're having trouble completing your request.**
 Need help now? Email us at <support@bluetail.aero>
 `;
-
-export const DEFAULT_FLEET_NAME = 'All Aircraft';
-
+exports.DEFAULT_FLEET_NAME = 'All Aircraft';
 /** The ID of the standard "HOLD SHORT" logbook_category. */
-export const HOLD_SHORT = 9;
-
+exports.HOLD_SHORT = 9;
 // These date/time formats are used as standards across the application.
-export const DATE_TIME_FORMAT = 'YYYY-MM-DD[T]HH:mm:ss';
-export const DEFAULT_DATE_FORMAT = 'MM-DD-YYYY';
-export const LOCAL_DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
-
+exports.DATE_TIME_FORMAT = 'YYYY-MM-DD[T]HH:mm:ss';
+exports.DEFAULT_DATE_FORMAT = 'MM-DD-YYYY';
+exports.LOCAL_DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
 /** Enum defining the types of logbook/category supported. */
-export const LOGBOOK_CATEGORY_TYPES = {
-  LOGBOOK: 1,
-  CATEGORY: 2,
-} as const;
-export type LogbookCategoryType = (typeof LOGBOOK_CATEGORY_TYPES)[keyof typeof LOGBOOK_CATEGORY_TYPES];
-
+exports.LOGBOOK_CATEGORY_TYPES = {
+    LOGBOOK: 1,
+    CATEGORY: 2,
+};
 /** Enum defining the different upload (source) types */
-export const UPLOAD_TYPES = {
-  COMPUTER: 1,
-  GOOGLE_DRIVE: 2,
-  DROPBOX: 3,
-  ONE_DRIVE: 4,
-  WATERMARK: 5, // when applying a watermark ?? unclear if we are uploading a new file or modifying existing one.
-  E_SIGN: 5, //  when applying a e-signature ?? unclear if we are uploading a new file or modifying existing one.
-  WEB_CLIPPER: 6,
-  VERYON_INTEGRATION: 7,
-  // Note: 8 was used once, but is now deprecated.
-  ADMIN_UPLOAD: 9,
-  EMAIL: 10,
-  PUBLIC_API: 11,
-  STRATOLAUNCHER: 12,
-} as const;
-export type UploadType = (typeof UPLOAD_TYPES)[keyof typeof UPLOAD_TYPES];
-
+exports.UPLOAD_TYPES = {
+    COMPUTER: 1,
+    GOOGLE_DRIVE: 2,
+    DROPBOX: 3,
+    ONE_DRIVE: 4,
+    WATERMARK: 5, // when applying a watermark ?? unclear if we are uploading a new file or modifying existing one.
+    E_SIGN: 5, //  when applying a e-signature ?? unclear if we are uploading a new file or modifying existing one.
+    WEB_CLIPPER: 6,
+    VERYON_INTEGRATION: 7,
+    // Note: 8 was used once, but is now deprecated.
+    ADMIN_UPLOAD: 9,
+    EMAIL: 10,
+    PUBLIC_API: 11,
+    STRATOLAUNCHER: 12,
+};
 /** Enum defining the supported aircraft assignment methods for users. */
-export const AIRCRAFT_ASSIGNMENT_METHOD = {
-  ALL: 'all',
-  FLEET: 'fleet',
-  AIRCRAFT: 'aircraft',
-} as const;
-export type AircraftAssignmentMethod = (typeof AIRCRAFT_ASSIGNMENT_METHOD)[keyof typeof AIRCRAFT_ASSIGNMENT_METHOD];
-
-
+exports.AIRCRAFT_ASSIGNMENT_METHOD = {
+    ALL: 'all',
+    FLEET: 'fleet',
+    AIRCRAFT: 'aircraft',
+};
 /** Enum defining the system's supported tracked-event types */
-export const TRACKING_TYPES = {
-  UPLOAD: 1,
-  DOWNLOAD: 2,
-  EMAILED: 3,
-  PRINTED: 4,
-  SHARED: 5,
-} as const;
-export type TrackingType = (typeof TRACKING_TYPES)[keyof typeof TRACKING_TYPES];
-
+exports.TRACKING_TYPES = {
+    UPLOAD: 1,
+    DOWNLOAD: 2,
+    EMAILED: 3,
+    PRINTED: 4,
+    SHARED: 5,
+};
 /** Enum defining the types of notifications the system can send */
-export const NOTIFICATION_TYPES = { // TODO: These are inconsistently used throughout the backend (find "notify_type", check and replace with constants).
-  DOCUMENT_ADDED: 1,
-  DOCUMENT_EDITED: 2,
-  DOCUMENT_RATED: 3, // ?
-  DOCUMENT_COMMENTED: 4,
-  NEW_USER_REGISTER: 5,
-  PLANE_ADDED: 6,
-  PLANE_REMOVED: 7,
-  ENTIRE_LOGBOOK_DOWNLOAD: 8,
-  REMOVE_USER: 9,
-} as const;
-export type NotificationType = (typeof NOTIFICATION_TYPES)[keyof typeof NOTIFICATION_TYPES];
-
-
+exports.NOTIFICATION_TYPES = {
+    DOCUMENT_ADDED: 1,
+    DOCUMENT_EDITED: 2,
+    DOCUMENT_RATED: 3, // ?
+    DOCUMENT_COMMENTED: 4,
+    NEW_USER_REGISTER: 5,
+    PLANE_ADDED: 6,
+    PLANE_REMOVED: 7,
+    ENTIRE_LOGBOOK_DOWNLOAD: 8,
+    REMOVE_USER: 9,
+};
 /** Enum defining the types of time-based-tokens that the system can generate. */
-export const TIME_BASED_TOKEN_TYPE = {
-  EMAIL: 1,
-  RESET_PASSWORD: 2,
-  FORGOT_PASSWORD: 3,
-} as const;
-export type TimeBasedTokenType = (typeof TIME_BASED_TOKEN_TYPE)[keyof typeof TIME_BASED_TOKEN_TYPE];
-
+exports.TIME_BASED_TOKEN_TYPE = {
+    EMAIL: 1,
+    RESET_PASSWORD: 2,
+    FORGOT_PASSWORD: 3,
+};
 /** Enum defining the system's supported aircraft subscription statuses */
-export const AIRCRAFT_SUBSCRIPTION_STATUS = {
-  PROVISIONAL: 0,
-  ACTIVE: 1,
-  DEACTIVE: 2,
-} as const;
-export type AircraftSubscriptionStatus = (typeof AIRCRAFT_SUBSCRIPTION_STATUS)[keyof typeof AIRCRAFT_SUBSCRIPTION_STATUS];
-
+exports.AIRCRAFT_SUBSCRIPTION_STATUS = {
+    PROVISIONAL: 0,
+    ACTIVE: 1,
+    DEACTIVE: 2,
+};
 /** Enum defining the system's supported account statuses */
-export const ACCOUNT_STATUS = {
-  ACTIVE: 'active',
-  INACTIVE: 'inactive',
-} as const;
-export type AccountStatus = (typeof ACCOUNT_STATUS)[keyof typeof ACCOUNT_STATUS];
-
+exports.ACCOUNT_STATUS = {
+    ACTIVE: 'active',
+    INACTIVE: 'inactive',
+};
 /** Enum defining the system's supported account styles */
-export const ACCOUNT_STYLE = {
-  TRADITIONAL: 'traditional',
-  PARTS: 'parts',
-} as const;
-export type AccountStyle = (typeof ACCOUNT_STYLE)[keyof typeof ACCOUNT_STYLE];
-
+exports.ACCOUNT_STYLE = {
+    TRADITIONAL: 'traditional',
+    PARTS: 'parts',
+};
 // Enum
-export const LIST_AIRCRAFT_MAKES_GROUP_TYPES = {
-  POPULAR: 'popular',
-  RARE: 'rare',
-} as const;
-export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES)[keyof typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES];
+exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = {
+    POPULAR: 'popular',
+    RARE: 'rare',
+};

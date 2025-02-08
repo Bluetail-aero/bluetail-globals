@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "esnext",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "baseUrl": "./src",
-  },
-  "exclude": ["node_modules"]
-}

@@ -16,9 +16,10 @@ const AircraftId = require('./AircraftId');
     2024.04.23 - Relocated this from bluetail-domain to bluetail-globals.
     2024.07.09 - Added implementation of parseTailNumber
     2024.08.22 - Refactored to leverage the AircraftId class.
+    2025.02.07 - These functions are no longer used anywhere, so we will drop this module in March or April.
 
   TODOS:
-    -
+    - These functions are no longer used anywhere, so we will drop this module in March or April
 */
 
 /**
@@ -30,6 +31,7 @@ exports.aircraftId2Tailnumber = (aircraftId) => {
   const instance = new AircraftId(aircraftId.country_code, aircraftId.reg_n_number);
   return instance.toTailNumber();
 };
+//! No longer used anywhere.
 
 /**
   * Tests if the aircraftId is in valid form.
@@ -38,6 +40,7 @@ exports.aircraftId2Tailnumber = (aircraftId) => {
   */
 exports.isValidAircraftId = (aircraftId) =>
   AircraftId.isValidAircraftId(aircraftId);
+//! No longer used anywhere.
 
 /**
  * Creates a new aircraftId object.
@@ -47,6 +50,7 @@ exports.isValidAircraftId = (aircraftId) =>
  */
 exports.newAircraftId = (country_code, reg_n_number) =>
   new AircraftId(country_code, reg_n_number);
+//! No longer used anywhere.
 
 /**
  * Parse and validate a tailnumber, split it into country_code and reg_n_number and country
@@ -55,3 +59,4 @@ exports.newAircraftId = (country_code, reg_n_number) =>
  */
 exports.parseTailNumber = (tailnumber) =>
   AircraftId.parseTailNumber(tailnumber);
+//! No longer used anywhere.

@@ -9,6 +9,7 @@
 
   TODOS:
     - Convert this to Typescript one day.
+    - Drop support for hpyhen and underscore once those are cleared out of the prod DB.
 */
 
 /**
@@ -115,6 +116,7 @@ class AircraftId {
       return { isValid: false, errorMessage: 'Bad form: missing country_code' };
     }
 
+    // TODO: Drop support for hpyhen and underscore once those are cleared out of the prod DB.
     if (!/^[a-zA-Z0-9_-]+$/.test(aircraftId.reg_n_number)) {
       return { isValid: false, errorMessage: 'reg_n_number contains invalid characters' };
     }

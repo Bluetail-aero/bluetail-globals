@@ -115,7 +115,7 @@ class AircraftId {
       return { isValid: false, errorMessage: 'Bad form: missing country_code' };
     }
 
-    if (!/^[a-zA-Z0-9]+$/.test(aircraftId.reg_n_number)) {
+    if (!/^[a-zA-Z0-9_-]+$/.test(aircraftId.reg_n_number)) {
       return { isValid: false, errorMessage: 'reg_n_number contains invalid characters' };
     }
 

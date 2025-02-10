@@ -25,6 +25,7 @@
  */
 class AircraftId {
   static #countryByCode = {
+    'CL': 'DO NOT USE - Supporting some crap data.',
     'OE': 'DO NOT USE - Supporting some crap data.',
     'VQ-': 'DO NOT USE - Supporting some crap data.  Use VQ-B instead.',
     'C6': 'DO NOT USE - Supporting some crap data.  Use C6- instead.',

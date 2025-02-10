@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const LEGAL_REG_NUMBER_REGEX = /^[a-zA-Z0-9_-]+$/;
 // Keep this private within the module (not exported)
 const countryByCode = {
+    'CL': 'DO NOT USE - Supporting some crap data.',
     'OE': 'DO NOT USE - Supporting some crap data.',
     'VQ-': 'DO NOT USE - Supporting some crap data. Use VQ-B instead.',
     'C6': 'DO NOT USE - Supporting some crap data. Use C6- instead.',

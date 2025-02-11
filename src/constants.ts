@@ -56,6 +56,8 @@ export const DEFAULT_FLEET_NAME = 'All Aircraft';
 /** The ID of the standard "HOLD SHORT" logbook_category. */
 export const HOLD_SHORT = 9;
 
+export const SYSTEM_USER_ID = 0;
+
 // These date/time formats are used as standards across the application.
 export const DATE_TIME_FORMAT = 'YYYY-MM-DD[T]HH:mm:ss';
 export const DEFAULT_DATE_FORMAT = 'MM-DD-YYYY';

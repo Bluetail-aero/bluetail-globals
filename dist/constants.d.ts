@@ -3,6 +3,7 @@ export declare const GENERIC_ERROR_MESSAGE: string;
 export declare const DEFAULT_FLEET_NAME = "All Aircraft";
 /** The ID of the standard "HOLD SHORT" logbook_category. */
 export declare const HOLD_SHORT = 9;
+export declare const SYSTEM_USER_ID = 0;
 export declare const DATE_TIME_FORMAT = "YYYY-MM-DD[T]HH:mm:ss";
 export declare const DEFAULT_DATE_FORMAT = "MM-DD-YYYY";
 export declare const LOCAL_DEFAULT_DATE_FORMAT = "YYYY-MM-DD";

@@ -12,10 +12,10 @@ import { AccountStyle, ACCOUNT_STYLE } from './constants';
 */
 
 // These characters are not allowed in file names. They will be removed and replaced by "_".
-export const ILLEGAL_FILE_PATH_CHARS = /[^0-9a-zA-Z!\-_.*'()/]/g;
+export const ILLEGAL_FILE_PATH_CHARS = /[^0-9a-zA-Z!\-_\.'()/]/g;
 
 // These characters are allowed in file names.
-export const ALLOWED_FILE_PATH_CHAR = /[0-9a-zA-Z!\-_.*'()/]/g;
+export const ALLOWED_FILE_PATH_CHAR = /[0-9a-zA-Z!\-_\.'()/]/g;
 // Since all files are stored in S3 we based this decision on the AWS S3 object key guidelines.
 // https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines
 

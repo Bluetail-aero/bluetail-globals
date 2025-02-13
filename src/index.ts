@@ -11,5 +11,5 @@ export * from './constants';
 export * from './functions';
 export * from './roles_and_privileges';
 export * from './mailedDocs';
-export * from './AircraftId';
-export * from './FolderKey';
+export * as AircraftId from './AircraftId';
+export * as FolderKey from './FolderKey';

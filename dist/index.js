@@ -18,26 +18,17 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FolderKey = exports.AircraftId = void 0;
+exports.FolderKey = exports.FOLDER_TYPES = exports.AircraftId = void 0;
 __exportStar(require("./constants"), exports);
 __exportStar(require("./functions"), exports);
 __exportStar(require("./roles_and_privileges"), exports);
 __exportStar(require("./mailedDocs"), exports);
-exports.AircraftId = __importStar(require("./AircraftId"));
-exports.FolderKey = __importStar(require("./FolderKey"));
+var AircraftId_1 = require("./AircraftId");
+Object.defineProperty(exports, "AircraftId", { enumerable: true, get: function () { return AircraftId_1.AircraftId; } });
+var FolderKey_1 = require("./FolderKey");
+Object.defineProperty(exports, "FOLDER_TYPES", { enumerable: true, get: function () { return FolderKey_1.FOLDER_TYPES; } });
+Object.defineProperty(exports, "FolderKey", { enumerable: true, get: function () { return FolderKey_1.FolderKey; } });

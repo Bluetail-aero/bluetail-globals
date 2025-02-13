@@ -14,6 +14,7 @@
     - Drop support for hpyhen and underscore once those are cleared out of the prod DB.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AircraftId = void 0;
 // TODO: Drop support for hyphen and underscore once those are cleared out of the prod DB.
 const LEGAL_REG_NUMBER_REGEX = /^[a-zA-Z0-9_-]+$/;
 // Keep this private within the module (not exported)
@@ -164,4 +165,4 @@ class AircraftId {
         return `${this.country_code}${this.reg_n_number}`;
     }
 }
-exports.default = AircraftId;
+exports.AircraftId = AircraftId;

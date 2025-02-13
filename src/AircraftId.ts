@@ -93,7 +93,7 @@ const countryCodes: string[] = Object.keys(countryByCode).sort((a, b) => b.lengt
  * const parsedTailNumber = AircraftId.parseTailNumber('N12345');
  * console.log(parsedTailNumber); // { country_code: 'N', reg_n_number: '12345', region: 'United States' }
  */
-export default class AircraftId {
+export class AircraftId {
   public country_code: string;
   public reg_n_number: string;
 

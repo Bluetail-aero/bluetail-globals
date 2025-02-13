@@ -18,7 +18,7 @@ export interface ValidationResult {
  * const parsedTailNumber = AircraftId.parseTailNumber('N12345');
  * console.log(parsedTailNumber); // { country_code: 'N', reg_n_number: '12345', region: 'United States' }
  */
-export default class AircraftId {
+export declare class AircraftId {
     country_code: string;
     reg_n_number: string;
     /**

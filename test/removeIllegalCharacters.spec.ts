@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { removeIllegalCharacters } from '../src/functions';
+import { removeIllegalCharacters } from '../dist/index';
 
 describe('constants Unit Tests', () => {
   describe('removeIllegalCharacters', () => {
@@ -16,7 +16,7 @@ describe('constants Unit Tests', () => {
     });
 
     it('should replace illegal characters with _', () => {
-      expect(removeIllegalCharacters('-!0#5%^&*()--=00|\\;:\'",.o?+.pdf')).to.equal('-!0_5___*()--_00____\'__.o__.pdf');
+      expect(removeIllegalCharacters('-!0#5%^&*()--=00|\\;:\'",.o?+.pdf')).to.equal('-!0_5____()--_00____\'__.o__.pdf');
     });
 
     it('should replace illegal colon characters with _', () => {

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { FolderKey, FOLDER_TYPES } from '../src/FolderKey';
+import { FolderKey, FOLDER_TYPES } from '../dist/index';
 
 describe('FolderKey', () => {
   describe('isValidKey', () => {

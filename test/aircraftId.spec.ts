@@ -1,9 +1,5 @@
 import { expect } from 'chai';
-import * as sinon from 'sinon';
-import AircraftId from '../src/AircraftId';
-import chai from 'chai';
-
-chai.should();
+import { AircraftId } from '../dist/index';
 
 describe('AircraftId Class', () => {
   describe('Constructor', () => {

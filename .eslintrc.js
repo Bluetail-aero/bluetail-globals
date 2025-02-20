@@ -48,6 +48,8 @@ module.exports = {
       tabWidth: 2,
       ignoreComments: true,
       ignoreUrls: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
     }],
 
     // camcelcase is deeply embedded into our system already, this isnt useful

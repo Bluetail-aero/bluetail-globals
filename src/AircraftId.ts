@@ -93,67 +93,9 @@ const countryCodes: string[] = Object.keys(countryByCode).sort((a, b) => b.lengt
  * const parsedTailNumber = AircraftId.parseTailNumber('N12345');
  * console.log(parsedTailNumber); // { country_code: 'N', reg_n_number: '12345', region: 'United States' }
  */
-<<<<<<< HEAD:AircraftId.js
-class AircraftId {
-  static #countryByCode = {
-    'CL': 'DO NOT USE - Supporting some crap data.',
-    'OE': 'DO NOT USE - Supporting some crap data.',
-    'VQ-': 'DO NOT USE - Supporting some crap data.  Use VQ-B instead.',
-    'C6': 'DO NOT USE - Supporting some crap data.  Use C6- instead.',
-    'N': 'United States',
-    'VH-': 'Australia',
-    'OE-': 'Austria',
-    'C6-': 'Bahamas',
-    'OO-': 'Belgium',
-    'VQ-B': 'Bermuda',
-    'VP-B': 'Bermuda',
-    'PP-': 'Brazil',
-    'PT-': 'Brazil',
-    'PR-': 'Brazil',
-    'PU-': 'Brazil',
-    'PS-': 'Brazil',
-    'C-': 'Canada',
-    'B-': 'China',
-    'OY-': 'Denmark',
-    'F-': 'France',
-    'D-': 'Germany',
-    'SX-': 'Greece',
-    'VT-': 'India',
-    'EI-': 'Ireland',
-    'EJ-': 'Ireland',
-    'I-': 'Italy',
-    'JA': 'Japan',
-    'JR': 'Japan',
-    'LX-': 'Luxembourg',
-    '9H-': 'Malta',
-    'XA-': 'Mexico',
-    'XB-': 'Mexico',
-    'XC-': 'Mexico',
-    'PH-': 'Netherlands',
-    'ZK-': 'New Zealand',
-    'ZL-': 'New Zealand',
-    'ZM-': 'New Zealand',
-    'RP-': 'Philippines',
-    'CS-': 'Portugal',
-    'RA-': 'Russia',
-    'RF-': 'Russia',
-    '9V-': 'Singapore',
-    'ZS-': 'South Africa',
-    'ZT-': 'South Africa',
-    'ZU-': 'South Africa',
-    'EC-': 'Spain',
-    'EM-': 'Spain',
-    'HB-': 'Switzerland',
-    'G-': 'United Kingdom',
-  };
-
-  static #countryCodes = Object.keys(AircraftId.#countryByCode).sort((a, b) =>
-    b.length - a.length);
-=======
 export class AircraftId {
   public country_code: string;
   public reg_n_number: string;
->>>>>>> ts:src/AircraftId.ts
 
   /**
    * Constructs an Aircraft ID instance.

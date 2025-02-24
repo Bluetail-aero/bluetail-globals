@@ -4,6 +4,7 @@
   CHANGE HISTORY:
     2025.02.07 - Converting this package to use typescript.
                - Spun this module off from the main 'constants' module.
+    2025.02.21 - Added DUPLICATE to MAILED_DOC_STATUS.
 
   TODOS:
     -
@@ -18,6 +19,7 @@ exports.MAILED_DOC_STATUS = {
     FAILED: -1,
     BLOCKED_SENDER: -2,
     NO_ATTACHMENTS: -3,
+    DUPLICATE: -4,
 };
 /** Enum defining the types of reply the system can send to people who emailed us documents */
 exports.MAILED_REPLY_SENDING_TYPES = {

@@ -6,6 +6,7 @@ export declare const MAILED_DOC_STATUS: {
     readonly FAILED: -1;
     readonly BLOCKED_SENDER: -2;
     readonly NO_ATTACHMENTS: -3;
+    readonly DUPLICATE: -4;
 };
 export type MailedDocStatus = (typeof MAILED_DOC_STATUS)[keyof typeof MAILED_DOC_STATUS];
 /** Enum defining the types of reply the system can send to people who emailed us documents */

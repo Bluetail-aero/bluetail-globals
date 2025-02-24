@@ -1,0 +1,68 @@
+/** Enum defining the system's supported role types */
+export declare const ROLE_TYPES: {
+    readonly OWNER: 1;
+    readonly ADMIN: 2;
+    readonly CONTRIBUTOR: 3;
+    readonly VIEWER: 4;
+    readonly GUEST: 5;
+    readonly BUYER: 6;
+    readonly MRO: 7;
+};
+export type RoleType = (typeof ROLE_TYPES)[keyof typeof ROLE_TYPES];
+/** Enum defining the system's supported privileges (privileges are bestowed on users via their role) */
+export declare const PRIVILEGES: {
+    readonly AddNotificationStatus: "AddNotificationStatus";
+    readonly AddcommentStatus: "AddcommentStatus";
+    readonly AssignRecordToLogbookStatus: "AssignRecordToLogbookStatus";
+    readonly CreateFolderStatus: "CreateFolderStatus";
+    readonly DownloadRecordStatus: "DownloadRecordStatus";
+    readonly PrintStatus: "PrintStatus";
+    readonly RESEARCH_PROJECT_CONTRIBUTE: "RESEARCH_PROJECT_CONTRIBUTE";
+    readonly RESEARCH_PROJECT_CREATE: "RESEARCH_PROJECT_CREATE";
+    readonly RESEARCH_PROJECT_MANAGE: "RESEARCH_PROJECT_MANAGE";
+    readonly RESEARCH_PROJECT_SHARE: "RESEARCH_PROJECT_SHARE";
+    readonly RESEARCH_PROJECT_VIEW: "RESEARCH_PROJECT_VIEW";
+    readonly ShareByEmailStatus: "ShareByEmailStatus";
+    readonly ShareByUrlStatus: "ShareByUrlStatus";
+    readonly StampStatus: "StampStatus";
+    readonly UploadRecordStatus: "UploadRecordStatus";
+    readonly ViewCommentsStatus: "ViewCommentsStatus";
+    readonly ViewFleetStatus: "ViewFleetStatus";
+    readonly ViewKeywordsStatus: "ViewKeywordsStatus";
+    readonly ViewNotesStatus: "ViewNotesStatus";
+    readonly ViewNotificationsStatus: "ViewNotificationsStatus";
+    readonly ViewPlaneProfileStatus: "ViewPlaneProfileStatus";
+    readonly ViewTagsStatus: "ViewTagsStatus";
+    readonly accountStatus: "accountStatus";
+    readonly addEditViewKeywords: "addEditViewKeywords";
+    readonly addFormStatus: "addFormStatus";
+    readonly categoryStatus: "categoryStatus";
+    readonly editRecordStatus: "editRecordStatus";
+    readonly esignatureStatus: "esignatureStatus";
+    readonly groupsStatus: "groupsStatus";
+    readonly integrationStatus: "integrationStatus";
+    readonly integreateApps: "integreateApps";
+    readonly logbookStatus: "logbookStatus";
+    readonly logoutStatus: "logoutStatus";
+    readonly myProfileStatus: "myProfileStatus";
+    readonly officeCategoryStatus: "officeCategoryStatus";
+    readonly paymentStatus: "paymentStatus";
+    readonly planeStatus: "planeStatus";
+    readonly printDownloadStatus: "printDownloadStatus";
+    readonly privateCategoryStatus: "privateCategoryStatus";
+    readonly removeUsersStatus: "removeUsersStatus";
+    readonly reportsStatus: "reportsStatus";
+    readonly setPrivilegesStatus: "setPrivilegesStatus";
+    readonly settingStatusInner: "settingStatusInner";
+    readonly settingsStatus: "settingsStatus";
+    readonly shareDropboxStatus: "shareDropboxStatus";
+    readonly shareGdriveStatus: "shareGdriveStatus";
+    readonly shareOneDriveStatus: "shareOneDriveStatus";
+    readonly timelineEvents: "timelineEvents";
+    readonly uploadStatus: "uploadStatus";
+    readonly uploadsStatus: "uploadsStatus";
+    readonly usersStatus: "usersStatus";
+    readonly watermarkStatus: "watermarkStatus";
+};
+export type PrivilegeEnum = (typeof PRIVILEGES)[keyof typeof PRIVILEGES];
+//# sourceMappingURL=roles_and_privileges.d.ts.map

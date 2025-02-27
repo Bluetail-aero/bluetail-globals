@@ -10,9 +10,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
     "lint": "eslint --cache --ext .ts ./src",
+    "lint:fix": "eslint --cache --fix --ext js --ext ts ./",
+    "clean": "rm -rf node_moldules dist package-lock.json && npm i && tsc",
     "test": "cross-env NODE_ENV=test mocha --require ts-node/register --recursive 'test/**/*.spec.ts'"
   },
   "devDependencies": {

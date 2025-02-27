@@ -7,6 +7,7 @@
                - Enhanced isValidAircraftId
                - Added support for some crap country codes that made it into production :/
     2025.02.07 - Converting this package to use typescript.
+    2025.02.26 - AircraftId ... Allow country_code to be empty string.
 
   TODOS:
     - Convert this to Typescript one day.
@@ -122,24 +123,28 @@ export class AircraftId {
       return { isValid: false, errorMessage: 'Aircraft ID is null' };
     }
 
-    if (!aircraftId.reg_n_number || typeof aircraftId.reg_n_number !== 'string' || aircraftId.reg_n_number.trim() === '') {
+    if (aircraftId.reg_n_number == null || typeof aircraftId.reg_n_number !== 'string' || aircraftId.reg_n_number.trim() === '') {
       return { isValid: false, errorMessage: 'Bad form: missing reg_n_number' };
     }
 
-    if (!aircraftId.country_code || typeof aircraftId.country_code !== 'string' || aircraftId.country_code.trim() === '') {
-      return { isValid: false, errorMessage: 'Bad form: missing country_code' };
+    if (aircraftId.country_code == null || typeof aircraftId.country_code !== 'string') {
+      return { isValid: false, errorMessage: 'Bad form: country_code not a string' };
     }
 
     if (!LEGAL_REG_NUMBER_REGEX.test(aircraftId.reg_n_number)) {
       return { isValid: false, errorMessage: 'reg_n_number contains invalid characters' };
     }
 
-    if (aircraftId.reg_n_number.startsWith(aircraftId.country_code)) {
-      return { isValid: false, errorMessage: 'reg_n_number should not contain the country_code prefix' };
-    }
+    if (aircraftId.country_code.trim() !== '') {
+      // If a country code is provided, the registration number must not start with it.
+      if (aircraftId.reg_n_number.startsWith(aircraftId.country_code)) {
+        return { isValid: false, errorMessage: 'reg_n_number should not contain the country_code prefix' };
+      }
 
-    if (!(aircraftId.country_code in countryByCode)) {
-      return { isValid: false, errorMessage: 'country_code is not a valid country code' };
+      // If a country code is provided, it must be in the list of known country codes.
+      if (!(aircraftId.country_code in countryByCode)) {
+        return { isValid: false, errorMessage: 'country_code is not a valid country code' };
+      }
     }
 
     return { isValid: true, errorMessage: null };

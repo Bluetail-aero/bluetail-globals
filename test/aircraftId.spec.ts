@@ -9,6 +9,12 @@ describe('AircraftId Class', () => {
       expect(aircraftId.reg_n_number).to.equal('12345');
     });
 
+    it('should create an instance with an empty string country_code', () => {
+      const aircraftId = new AircraftId('', 'N12345');
+      expect(aircraftId.country_code).to.equal('');
+      expect(aircraftId.reg_n_number).to.equal('N12345');
+    });
+
     it('should throw an error for invalid country_code', () => {
       expect(() => new AircraftId('INVALID', '12345')).to.throw(Error, /country_code is not a valid country code/);
     });

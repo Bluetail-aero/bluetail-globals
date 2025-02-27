@@ -8,6 +8,7 @@
                - Enhanced isValidAircraftId
                - Added support for some crap country codes that made it into production :/
     2025.02.07 - Converting this package to use typescript.
+    2025.02.26 - AircraftId ... Allow country_code to be empty string.
 
   TODOS:
     - Convert this to Typescript one day.

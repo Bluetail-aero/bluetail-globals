@@ -53,7 +53,9 @@ module.exports = {
     }],
 
     // camcelcase is deeply embedded into our system already, this isnt useful
-    camelcase: 'off',
+    'camelcase': 'off',
+    '@typescript-eslint/naming-convention': 'off',
+
     'linebreak-style': 'off',
 
     'no-underscore-dangle': 'off',

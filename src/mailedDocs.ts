@@ -5,6 +5,7 @@
                - Spun this module off from the main 'constants' module.
     2025.02.21 - Added DUPLICATE to MAILED_DOC_STATUS.
     2025.02.27 - Added SMALL_IMAGE to MAILED_DOC_STATUS.
+    2025.03.27 - Renaming SMALL_IMAGE to EMAIL_SIGNATURE in MAILED_DOC_STATUS.
 
   TODOS:
     -
@@ -19,6 +20,7 @@ export const MAILED_DOC_STATUS = {
   BLOCKED_SENDER: -2,
   NO_ATTACHMENTS: -3,
   DUPLICATE: -4,
+  EMAIL_SIGNATURE: -5, // Use this instead of SMALL_IMAGE
   SMALL_IMAGE: -5,
 } as const;
 export type MailedDocStatus = (typeof MAILED_DOC_STATUS)[keyof typeof MAILED_DOC_STATUS];

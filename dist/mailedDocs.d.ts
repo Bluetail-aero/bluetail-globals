@@ -7,6 +7,7 @@ export declare const MAILED_DOC_STATUS: {
     readonly BLOCKED_SENDER: -2;
     readonly NO_ATTACHMENTS: -3;
     readonly DUPLICATE: -4;
+    readonly EMAIL_SIGNATURE: -5;
     readonly SMALL_IMAGE: -5;
 };
 export type MailedDocStatus = (typeof MAILED_DOC_STATUS)[keyof typeof MAILED_DOC_STATUS];

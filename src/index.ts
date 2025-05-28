@@ -6,6 +6,7 @@
     2024.08.22 - Initial draft of the FolderKey class.
     2025.02.07 - Converting this package to use typescript.
     2025.04.18 - Dropped the use of AircraftId.  Export the type FolderType.
+    2025.05.28 - Created the JustDate type so we can model document_date and form_date
 */
 
 export * from './constants';
@@ -13,3 +14,5 @@ export * from './functions';
 export * from './roles_and_privileges';
 export * from './mailedDocs';
 export { FOLDER_TYPES, FolderType, FolderKey } from './FolderKey';
+export type { JustDate } from './JustDate';
+export * from './JustDate';

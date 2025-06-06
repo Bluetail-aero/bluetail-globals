@@ -3,6 +3,7 @@
 
   CHANGE HISTORY:
     2025.05.28 - Created this type so we can model document_date and form_date
+    2025.06.05 - Handle empty string case
 
   TODOS:
     -
@@ -17,7 +18,7 @@ exports.parseJustDate = parseJustDate;
  */
 function parseJustDate(dateStr) {
     // Handle null case
-    if (dateStr === null) {
+    if (dateStr === null || dateStr === '') {
         return null;
     }
     // Handle undefined case

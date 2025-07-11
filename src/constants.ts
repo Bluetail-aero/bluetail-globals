@@ -172,3 +172,4 @@ export const FILE_ACTIVITY_CATEGORY = {
   UNRELATE: 'unrelate',
   UPDATE: 'update',
 } as const;
+export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];

@@ -158,3 +158,18 @@ export const LIST_AIRCRAFT_MAKES_GROUP_TYPES = {
   RARE: 'rare',
 } as const;
 export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES)[keyof typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES];
+
+/** Constants for file activity log categories */
+export const FILE_ACTIVITY_CATEGORY = {
+  ARCHIVE: 'archive',
+  CREATE: 'create',
+  HIDE_PAGE: 'hide_page',
+  MOVE: 'move',
+  RELATE: 'relate',
+  RESTORE: 'restore',
+  SHARE: 'share',
+  UNHIDE_PAGE: 'unhide_page',
+  UNRELATE: 'unrelate',
+  UPDATE: 'update',
+} as const;
+export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];

@@ -89,4 +89,18 @@ export declare const LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
     readonly RARE: "rare";
 };
 export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES)[keyof typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES];
+/** Constants for file activity log categories */
+export declare const FILE_ACTIVITY_CATEGORY: {
+    readonly ARCHIVE: "archive";
+    readonly CREATE: "create";
+    readonly HIDE_PAGE: "hide_page";
+    readonly MOVE: "move";
+    readonly RELATE: "relate";
+    readonly RESTORE: "restore";
+    readonly SHARE: "share";
+    readonly UNHIDE_PAGE: "unhide_page";
+    readonly UNRELATE: "unrelate";
+    readonly UPDATE: "update";
+};
+export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 //# sourceMappingURL=constants.d.ts.map

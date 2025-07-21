@@ -101,6 +101,7 @@ export declare const FILE_ACTIVITY_CATEGORY: {
     readonly UNHIDE_PAGE: "unhide_page";
     readonly UNRELATE: "unrelate";
     readonly UPDATE: "update";
+    readonly UPDATE_PAGE: "update_page";
 };
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 //# sourceMappingURL=constants.d.ts.map

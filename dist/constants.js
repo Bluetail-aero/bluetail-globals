@@ -144,4 +144,5 @@ exports.FILE_ACTIVITY_CATEGORY = {
     UNHIDE_PAGE: 'unhide_page',
     UNRELATE: 'unrelate',
     UPDATE: 'update',
+    UPDATE_PAGE: 'update_page',
 };

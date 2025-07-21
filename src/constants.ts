@@ -171,5 +171,6 @@ export const FILE_ACTIVITY_CATEGORY = {
   UNHIDE_PAGE: 'unhide_page',
   UNRELATE: 'unrelate',
   UPDATE: 'update',
+  UPDATE_PAGE: 'update_page',
 } as const;
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];

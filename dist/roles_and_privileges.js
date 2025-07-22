@@ -74,4 +74,5 @@ exports.PRIVILEGES = {
     uploadsStatus: 'uploadsStatus',
     usersStatus: 'usersStatus',
     watermarkStatus: 'watermarkStatus',
+    DOCUMENT_ACTIVITY_VIEW: 'DOCUMENT_ACTIVITY_VIEW'
 };

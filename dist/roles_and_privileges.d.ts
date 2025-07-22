@@ -63,6 +63,7 @@ export declare const PRIVILEGES: {
     readonly uploadsStatus: "uploadsStatus";
     readonly usersStatus: "usersStatus";
     readonly watermarkStatus: "watermarkStatus";
+    readonly DOCUMENT_ACTIVITY_VIEW: "DOCUMENT_ACTIVITY_VIEW";
 };
 export type PrivilegeEnum = (typeof PRIVILEGES)[keyof typeof PRIVILEGES];
 //# sourceMappingURL=roles_and_privileges.d.ts.map

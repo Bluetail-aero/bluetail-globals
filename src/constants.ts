@@ -41,6 +41,8 @@
     2024.11.05 - Remove unused PRIVILEGES.keywordsStatus
     2025.01.24 - Add the AIRCRAFT_ASSIGNMENT_METHOD enum and provided jsdoc for all the enums exported.
     2025.02.07 - Converting this package to use typescript.
+    2025.07.11 - Add FILE_ACTIVITY_CATEGORY enum
+    2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
 */
 
 
@@ -167,6 +169,7 @@ export const FILE_ACTIVITY_CATEGORY = {
   MOVE: 'move',
   RELATE: 'relate',
   RESTORE: 'restore',
+  ROTATE_PAGE: 'rotate_page',
   SHARE: 'share',
   UNHIDE_PAGE: 'unhide_page',
   UNRELATE: 'unrelate',

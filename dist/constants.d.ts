@@ -97,6 +97,7 @@ export declare const FILE_ACTIVITY_CATEGORY: {
     readonly MOVE: "move";
     readonly RELATE: "relate";
     readonly RESTORE: "restore";
+    readonly ROTATE_PAGE: "rotate_page";
     readonly SHARE: "share";
     readonly UNHIDE_PAGE: "unhide_page";
     readonly UNRELATE: "unrelate";

@@ -43,6 +43,7 @@
     2025.02.07 - Converting this package to use typescript.
     2025.07.11 - Add FILE_ACTIVITY_CATEGORY enum
     2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
+    2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
 */
 
 
@@ -177,3 +178,171 @@ export const FILE_ACTIVITY_CATEGORY = {
   UPDATE_PAGE: 'update_page',
 } as const;
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
+
+
+/** Enum defining the possible metadata processing outcomes for a file. */
+export const FILE_METADATA_STATUS = {
+  /** Failed, because the PDF was corrupt or encrypted. */
+  CORRUPTED_PDF: -4,
+  /** Failed, for some unknown reason. */
+  UNKNOWN_ERROR: -3,
+  /** Failed, because of a network issue downloading the object from S3. */
+  NETWORK_ERROR: -2,
+  /** Failed, because the object could not be found on S3. */
+  S3_FILE_NOT_EXIST: -1,
+
+  /** Process is pending or in-progress. */
+  PENDING: 0,
+
+  /** Successful completion. */
+  DONE: 1,
+} as const;
+/** Enum defining the possible metadata processing outcomes for a file. */
+export type FileMetaDataStatus = (typeof FILE_METADATA_STATUS)[keyof typeof FILE_METADATA_STATUS];
+
+
+/** Enum defining the possible BADASS outcomes for a file. */
+export const FILE_BADASS_STATUS = {
+  /** Failed, because the PDF was corrupt or encrypted. */
+  ENCRYPTED_PDF: -7,
+  /** Failed, because we don't know how many pages the PDF contains. */
+  PAGE_COUNT_NULL: -6,
+  /** Failed, because a doc_master record for the file could not be found. */
+  DOC_MASTER_ID_UNKNOWN: -5,
+  /** Failed, because the object could not be loaded from S3. */
+  FAILED_TO_LOAD: -4,
+  /** Failed, because the object was not found on S3. */
+  OBJECT_NOT_FOUND: -3,
+  /** Failed, because the files type is not supported. */
+  NOT_SUPPORTED: -2,
+  /** Failed, unspecific reason. */
+  FAILED: -1,
+
+  /** Process is pending or in-progress. */
+  PENDING: 0,
+
+  /** Successful completion. */
+  COMPLETED: 1,
+} as const;
+/** Enum defining the possible BADASS outcomes for a file. */
+export type FileBadassStatus = (typeof FILE_BADASS_STATUS)[keyof typeof FILE_BADASS_STATUS];
+
+
+/** Enum defining the possible MACH outcomes for a file. */
+export const TEXTRACT_STATUS = {
+  /** Initial (default) value when file is uploaded */
+  PENDING: 0,
+  /** Indicates that Textract processing issuccessfully complete. In UI we will show M icon for file. */
+  COMPLETE: 1,
+  /** Indicates there was an error when we tried to process the file */
+  ERROR: -1,
+  /** Indicates that Textract not supported for this file type */
+  NOT_SUPPORTED: -2,
+  /** Indicates that this file should not be mach searched (or textracted) */
+  NO_TEXTRACT: -3,
+} as const;
+/** Enum defining the possible Textract outcomes for a file. */
+export type TextractStatus = (typeof TEXTRACT_STATUS)[keyof typeof TEXTRACT_STATUS];
+
+
+/** Enum defining the possible MACH-processing outcomes for a file. 
+ * TEXTRACT_STATUS tells us the outcome of the operation overall, this field helps us know when a file is in-progress. */
+export const MACH_STATUS = {
+  /** Initial (default) value when file is uploaded */
+  PENDING: 0,
+  /** Indicates that Textract processing has begun. Essentially this means "PENDING". In UI we will show pending status for file. */
+  BEGUN: 1
+} as const;
+/** Enum defining the possible MACH outcomes for a file. */
+export type MachStatus = (typeof MACH_STATUS)[keyof typeof MACH_STATUS];
+
+
+/** Enum defining the possible values of juf.delete_status */
+export const DELETE_STATUS = {
+  /** Used when the JUF record has been created, but the upload has not been committed/confirmed. Files in this state are not considered a complete upload. */
+  PENDING: -1,
+  /** The file is active */
+  ACTIVE: 0,
+  /** The file is archived (deleted) */
+  ARCHIVED: 1
+} as const;
+/** Enum defining the possible values of juf.delete_status */
+export type DeleteStatus = (typeof DELETE_STATUS)[keyof typeof DELETE_STATUS];
+
+
+/** Enum defining the possible homogenization outcomes for a file. */
+export const FILE_HOMOGENIZATION_STATUS = {
+  /** Failed, because it failed meta-data extraction. */
+  NO_META_DATA: -8,
+  /** Failed, because the PDF was corrupt or encrypted. */
+  ENCRYPTED_PDF: -7,
+  /** Failed, because we don't know how many pages the PDF contains. */
+  PAGE_COUNT_NULL: -6,
+  /** Failed, because a doc_master record for the file could not be found. */
+  DOC_MASTER_ID_UNKNOWN: -5,
+  /** Failed, because the object could not be loaded from S3. */
+  FAILED_TO_LOAD: -4,
+  /** Failed, because the object was not found on S3. */
+  OBJECT_NOT_FOUND: -3,
+  /** Failed, because the files type is not supported. */
+  NOT_SUPPORTED: -2,
+  /** Failed, unspecific reason. */
+  FAILED: -1,
+
+  /** Process is pending or in-progress. */
+  PENDING: 0,
+
+  /** Successful completion. */
+  COMPLETED: 1,
+} as const;
+/** Enum defining the possible homogenization outcomes for a file. */
+export type FileHomogenizationStatus = (typeof FILE_HOMOGENIZATION_STATUS)[keyof typeof FILE_HOMOGENIZATION_STATUS];
+
+
+/** Enum defining the possible form_status outcomes for a file. */
+export const FORM_STATUS = {
+  /** Failed, unspecific reason. */
+  FAILED: -1,
+
+  /** Initial (default) value when file is uploaded. */
+  PENDING: 0,
+
+  /** Successful completion (found a form_type). */
+  COMPLETED: 1,
+
+  /** No action needed (form_type not found). */
+  NOTHING_FOUND: 2
+} as const;
+/** Enum defining the possible form status outcomes for a file. */
+export type FormStatus = (typeof FORM_STATUS)[keyof typeof FORM_STATUS];
+
+
+/** Enum defining the possible form_date_status outcomes for a file. */
+export const FORM_DATE_STATUS = {
+  /** Failed, unspecific reason. */
+  FAILED: -1,
+
+  /** Initial (default) value when file is uploaded. */
+  PENDING: 0,
+
+  /** Successful completion (found a form_date). */
+  COMPLETED: 1,
+
+  /** No action needed (form_date not found). */
+  NOTHING_FOUND: 2
+} as const;
+/** Enum defining the possible form date status outcomes for a file. */
+export type FormDateStatus = (typeof FORM_DATE_STATUS)[keyof typeof FORM_DATE_STATUS];
+
+
+/** Enum defining the possible OpenSearch indexing statuses for a document. */
+export const OPENSEARCH_STATUS = {
+  /** Initial (default) value when document has not been added to opensearch index (also used to reindex a document by resetting it back to this state) */
+  PENDING: 0,
+  /** Indicates that the document was intentionally skipped (not indexed) */
+  SKIPPED: -1,
+  /** Indicates that the document has been indexed */
+  INDEXED: 1,
+} as const;
+/** Enum defining the possible OpenSearch indexing statuses for a document. */
+export type OpensearchStatus = (typeof OPENSEARCH_STATUS)[keyof typeof OPENSEARCH_STATUS];

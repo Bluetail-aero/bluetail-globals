@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-disable no-magic-numbers */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
+exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
 /*
   A valueable resource that centralizes all the constants and enums used across the Bluetail codebase.
 
@@ -45,6 +45,7 @@ exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = expor
     2025.02.07 - Converting this package to use typescript.
     2025.07.11 - Add FILE_ACTIVITY_CATEGORY enum
     2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
+    2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
 */
 /** Generic error message to be used when an IDK error occurs.*/
 exports.GENERIC_ERROR_MESSAGE = `
@@ -148,4 +149,124 @@ exports.FILE_ACTIVITY_CATEGORY = {
     UNRELATE: 'unrelate',
     UPDATE: 'update',
     UPDATE_PAGE: 'update_page',
+};
+/** Enum defining the possible metadata processing outcomes for a file. */
+exports.FILE_METADATA_STATUS = {
+    /** Failed, because the PDF was corrupt or encrypted. */
+    CORRUPTED_PDF: -4,
+    /** Failed, for some unknown reason. */
+    UNKNOWN_ERROR: -3,
+    /** Failed, because of a network issue downloading the object from S3. */
+    NETWORK_ERROR: -2,
+    /** Failed, because the object could not be found on S3. */
+    S3_FILE_NOT_EXIST: -1,
+    /** Process is pending or in-progress. */
+    PENDING: 0,
+    /** Successful completion. */
+    DONE: 1,
+};
+/** Enum defining the possible BADASS outcomes for a file. */
+exports.FILE_BADASS_STATUS = {
+    /** Failed, because the PDF was corrupt or encrypted. */
+    ENCRYPTED_PDF: -7,
+    /** Failed, because we don't know how many pages the PDF contains. */
+    PAGE_COUNT_NULL: -6,
+    /** Failed, because a doc_master record for the file could not be found. */
+    DOC_MASTER_ID_UNKNOWN: -5,
+    /** Failed, because the object could not be loaded from S3. */
+    FAILED_TO_LOAD: -4,
+    /** Failed, because the object was not found on S3. */
+    OBJECT_NOT_FOUND: -3,
+    /** Failed, because the files type is not supported. */
+    NOT_SUPPORTED: -2,
+    /** Failed, unspecific reason. */
+    FAILED: -1,
+    /** Process is pending or in-progress. */
+    PENDING: 0,
+    /** Successful completion. */
+    COMPLETED: 1,
+};
+/** Enum defining the possible MACH outcomes for a file. */
+exports.TEXTRACT_STATUS = {
+    /** Initial (default) value when file is uploaded */
+    PENDING: 0,
+    /** Indicates that Textract processing issuccessfully complete. In UI we will show M icon for file. */
+    COMPLETE: 1,
+    /** Indicates there was an error when we tried to process the file */
+    ERROR: -1,
+    /** Indicates that Textract not supported for this file type */
+    NOT_SUPPORTED: -2,
+    /** Indicates that this file should not be mach searched (or textracted) */
+    NO_TEXTRACT: -3,
+};
+/** Enum defining the possible MACH-processing outcomes for a file.
+ * TEXTRACT_STATUS tells us the outcome of the operation overall, this field helps us know when a file is in-progress. */
+exports.MACH_STATUS = {
+    /** Initial (default) value when file is uploaded */
+    PENDING: 0,
+    /** Indicates that Textract processing has begun. Essentially this means "PENDING". In UI we will show pending status for file. */
+    BEGUN: 1
+};
+/** Enum defining the possible values of juf.delete_status */
+exports.DELETE_STATUS = {
+    /** Used when the JUF record has been created, but the upload has not been committed/confirmed. Files in this state are not considered a complete upload. */
+    PENDING: -1,
+    /** The file is active */
+    ACTIVE: 0,
+    /** The file is archived (deleted) */
+    ARCHIVED: 1
+};
+/** Enum defining the possible homogenization outcomes for a file. */
+exports.FILE_HOMOGENIZATION_STATUS = {
+    /** Failed, because it failed meta-data extraction. */
+    NO_META_DATA: -8,
+    /** Failed, because the PDF was corrupt or encrypted. */
+    ENCRYPTED_PDF: -7,
+    /** Failed, because we don't know how many pages the PDF contains. */
+    PAGE_COUNT_NULL: -6,
+    /** Failed, because a doc_master record for the file could not be found. */
+    DOC_MASTER_ID_UNKNOWN: -5,
+    /** Failed, because the object could not be loaded from S3. */
+    FAILED_TO_LOAD: -4,
+    /** Failed, because the object was not found on S3. */
+    OBJECT_NOT_FOUND: -3,
+    /** Failed, because the files type is not supported. */
+    NOT_SUPPORTED: -2,
+    /** Failed, unspecific reason. */
+    FAILED: -1,
+    /** Process is pending or in-progress. */
+    PENDING: 0,
+    /** Successful completion. */
+    COMPLETED: 1,
+};
+/** Enum defining the possible form_status outcomes for a file. */
+exports.FORM_STATUS = {
+    /** Failed, unspecific reason. */
+    FAILED: -1,
+    /** Initial (default) value when file is uploaded. */
+    PENDING: 0,
+    /** Successful completion (found a form_type). */
+    COMPLETED: 1,
+    /** No action needed (form_type not found). */
+    NOTHING_FOUND: 2
+};
+/** Enum defining the possible form_date_status outcomes for a file. */
+exports.FORM_DATE_STATUS = {
+    /** Failed, unspecific reason. */
+    FAILED: -1,
+    /** Initial (default) value when file is uploaded. */
+    PENDING: 0,
+    /** Successful completion (found a form_date). */
+    COMPLETED: 1,
+    /** No action needed (form_date not found). */
+    NOTHING_FOUND: 2
+};
+/** Enum defining the possible OpenSearch indexing statuses for a document. */
+exports.OPENSEARCH_STATUS = {
+    /** Initial (default) value when document has not been added to opensearch index (also used to reindex a document by resetting it back to this state) */
+    PENDING: 0,
+    /** Indicates that the document was intentionally skipped (not indexed) */
+    SKIPPED: -1,
+    /** Indicates that the document has been indexed */
+    INDEXED: 1,
 };

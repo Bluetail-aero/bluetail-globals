@@ -12,7 +12,9 @@
   "scripts": {
     "lint": "eslint --cache --ext .ts ./src",
     "lint:fix": "eslint --cache --fix --ext js --ext ts ./",
-    "clean": "rm -rf node_modules dist package-lock.json && npm i && tsc",
+    "refresh": "npm run clean && npm run build",
+    "clean": "shx rm -rf dist node_modules package-lock.json",
+    "build": "npm install && tsc",
     "test": "NODE_ENV=test mocha --require ts-node/register --recursive 'test/**/*.spec.ts'",
     "updatetag": "git tag -fa \"$TAG\" HEAD && git push --force origin \"$TAG\""
   },

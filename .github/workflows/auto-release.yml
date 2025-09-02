@@ -1,0 +1,105 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  auto-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Get version from package.json
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Package version: $VERSION"
+
+      - name: Check if tag exists
+        id: check-tag
+        run: |
+          if git rev-parse "refs/tags/${{ env.VERSION }}" >/dev/null 2>&1; then
+            echo "TAG_EXISTS=true" >> $GITHUB_ENV
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "🏷️ Tag ${{ env.VERSION }} already exists"
+          else
+            echo "TAG_EXISTS=false" >> $GITHUB_ENV
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "🏷️ Tag ${{ env.VERSION }} does not exist yet"
+          fi
+
+      - name: Create or move tag
+        run: |
+          if [ "${{ env.TAG_EXISTS }}" = "true" ]; then
+            echo "🔄 Moving existing tag ${{ env.VERSION }} to current commit"
+            # Delete the existing tag locally and remotely
+            git tag -d ${{ env.VERSION }}
+            git push origin :refs/tags/${{ env.VERSION }}
+          else
+            echo "✨ Creating new tag ${{ env.VERSION }}"
+          fi
+          # Create a new tag at the current commit
+          git tag ${{ env.VERSION }}
+          git push origin ${{ env.VERSION }}
+
+      - name: Check if release exists (including drafts)
+        id: check-release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              // Get all releases (including drafts)
+              const releases = await github.rest.repos.listReleases({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              
+              // Find a release with matching tag name
+              const matchingRelease = releases.data.find(release => 
+                release.tag_name === process.env.VERSION
+              );
+              
+              if (matchingRelease) {
+                console.log(`📝 Release exists: ${matchingRelease.name} (Draft: ${matchingRelease.draft})`);
+                return true;
+              } else {
+                console.log(`📝 No release found for version ${process.env.VERSION}`);
+                return false;
+              }
+            } catch (error) {
+              console.log(`❌ Error checking for release: ${error.message}`);
+              return false;
+            }
+
+      - name: Create release if it doesn't exist
+        if: ${{ steps.check-release.outputs.result == 'false' }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              const release = await github.rest.repos.createRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag_name: process.env.VERSION,
+                name: process.env.VERSION,
+                draft: true,
+                generate_release_notes: true
+              });
+              console.log(`✅ Created draft release: ${release.data.name}`);
+            } catch (error) {
+              console.log(`❌ Error creating release: ${error.message}`);
+            }

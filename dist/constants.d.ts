@@ -91,10 +91,12 @@ export declare const LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
 export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES)[keyof typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES];
 /** Constants for file activity log categories */
 export declare const FILE_ACTIVITY_CATEGORY: {
+    readonly ACCEPT_SUGGESTION: "accept_suggestion";
     readonly ARCHIVE: "archive";
     readonly CREATE: "create";
     readonly HIDE_PAGE: "hide_page";
     readonly MOVE: "move";
+    readonly REJECT_SUGGESTION: "reject_suggestion";
     readonly RELATE: "relate";
     readonly RESTORE: "restore";
     readonly ROTATE_PAGE: "rotate_page";

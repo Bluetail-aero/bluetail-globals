@@ -44,7 +44,7 @@
     2025.07.11 - Add FILE_ACTIVITY_CATEGORY enum
     2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
     2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
-    2025.09.19 - Add accept_suggestion and reject_suggestion to FILE_ACTIVITY_CATEGORY BT-7579
+    2025.09.28 - Made a non-breaking alteration to OPENSEARCH_STATUS to differentiate between SKIPPED and FAILED states.
 */
 
 
@@ -165,12 +165,10 @@ export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES
 
 /** Constants for file activity log categories */
 export const FILE_ACTIVITY_CATEGORY = {
-  ACCEPT_SUGGESTION: 'accept_suggestion',
   ARCHIVE: 'archive',
   CREATE: 'create',
   HIDE_PAGE: 'hide_page',
   MOVE: 'move',
-  REJECT_SUGGESTION: 'reject_suggestion',
   RELATE: 'relate',
   RESTORE: 'restore',
   ROTATE_PAGE: 'rotate_page',
@@ -340,10 +338,15 @@ export type FormDateStatus = (typeof FORM_DATE_STATUS)[keyof typeof FORM_DATE_ST
 
 /** Enum defining the possible OpenSearch indexing statuses for a document. */
 export const OPENSEARCH_STATUS = {
+  /** Indicates that the document was intentionally skipped (not indexed) */
+  SKIPPED: -2,
+
+  /** Indicates that the document was not indexed due to an error. */
+  FAILED: -1,
+
   /** Initial (default) value when document has not been added to opensearch index (also used to reindex a document by resetting it back to this state) */
   PENDING: 0,
-  /** Indicates that the document was intentionally skipped (not indexed) */
-  SKIPPED: -1,
+
   /** Indicates that the document has been indexed */
   INDEXED: 1,
 } as const;

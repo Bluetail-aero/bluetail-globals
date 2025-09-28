@@ -91,12 +91,10 @@ export declare const LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
 export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES)[keyof typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES];
 /** Constants for file activity log categories */
 export declare const FILE_ACTIVITY_CATEGORY: {
-    readonly ACCEPT_SUGGESTION: "accept_suggestion";
     readonly ARCHIVE: "archive";
     readonly CREATE: "create";
     readonly HIDE_PAGE: "hide_page";
     readonly MOVE: "move";
-    readonly REJECT_SUGGESTION: "reject_suggestion";
     readonly RELATE: "relate";
     readonly RESTORE: "restore";
     readonly ROTATE_PAGE: "rotate_page";
@@ -236,10 +234,12 @@ export declare const FORM_DATE_STATUS: {
 export type FormDateStatus = (typeof FORM_DATE_STATUS)[keyof typeof FORM_DATE_STATUS];
 /** Enum defining the possible OpenSearch indexing statuses for a document. */
 export declare const OPENSEARCH_STATUS: {
+    /** Indicates that the document was intentionally skipped (not indexed) */
+    readonly SKIPPED: -2;
+    /** Indicates that the document was not indexed due to an error. */
+    readonly FAILED: -1;
     /** Initial (default) value when document has not been added to opensearch index (also used to reindex a document by resetting it back to this state) */
     readonly PENDING: 0;
-    /** Indicates that the document was intentionally skipped (not indexed) */
-    readonly SKIPPED: -1;
     /** Indicates that the document has been indexed */
     readonly INDEXED: 1;
 };

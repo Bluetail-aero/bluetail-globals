@@ -1,6 +1,6 @@
 {
   "name": "bluetail-globals",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Shared package/library contains shit we can share across the FE and BE to keep everyone synced.",
   "license": "UNLICENSED",
   "repository": "https://github.com/Bluetail-aero/bluetail-global.git",

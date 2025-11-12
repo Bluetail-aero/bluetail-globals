@@ -45,6 +45,7 @@
     2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
     2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
     2025.09.28 - Made a non-breaking alteration to OPENSEARCH_STATUS to differentiate between SKIPPED and FAILED states.
+    2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
 */
 
 
@@ -182,6 +183,18 @@ export const FILE_ACTIVITY_CATEGORY = {
 } as const;
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 
+/** Constants for document activity log categories */
+export const DOCUMENT_ACTIVITY_CATEGORY = {
+  ARCHIVE: 'archive',
+  CREATE: 'create',
+  ADD_PAGE: 'add_page',
+  MOVE: 'move',
+  RESTORE: 'restore',
+  SHARE: 'share',
+  REMOVE_PAGE: 'remove_page',
+  UPDATE: 'update',
+} as const;
+export type DocumentActivityCategory = (typeof DOCUMENT_ACTIVITY_CATEGORY)[keyof typeof DOCUMENT_ACTIVITY_CATEGORY];
 
 /** Enum defining the possible metadata processing outcomes for a file. */
 export const FILE_METADATA_STATUS = {

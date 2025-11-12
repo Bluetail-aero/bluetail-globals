@@ -107,6 +107,18 @@ export declare const FILE_ACTIVITY_CATEGORY: {
     readonly UPDATE_PAGE: "update_page";
 };
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
+/** Constants for document activity log categories */
+export declare const DOCUMENT_ACTIVITY_CATEGORY: {
+    readonly ARCHIVE: "archive";
+    readonly CREATE: "create";
+    readonly ADD_PAGE: "add_page";
+    readonly MOVE: "move";
+    readonly RESTORE: "restore";
+    readonly SHARE: "share";
+    readonly REMOVE_PAGE: "remove_page";
+    readonly UPDATE: "update";
+};
+export type DocumentActivityCategory = (typeof DOCUMENT_ACTIVITY_CATEGORY)[keyof typeof DOCUMENT_ACTIVITY_CATEGORY];
 /** Enum defining the possible metadata processing outcomes for a file. */
 export declare const FILE_METADATA_STATUS: {
     /** Failed, because the PDF was corrupt or encrypted. */

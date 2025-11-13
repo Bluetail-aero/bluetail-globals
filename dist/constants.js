@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-disable no-magic-numbers */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
+exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
 /*
   A valueable resource that centralizes all the constants and enums used across the Bluetail codebase.
 
@@ -47,6 +47,7 @@ exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exp
     2025.07.24 - Add rotate_page to FILE_ACTIVITY_CATEGORY
     2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
     2025.09.28 - Made a non-breaking alteration to OPENSEARCH_STATUS to differentiate between SKIPPED and FAILED states.
+    2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
 */
 /** Generic error message to be used when an IDK error occurs.*/
 exports.GENERIC_ERROR_MESSAGE = `
@@ -152,6 +153,17 @@ exports.FILE_ACTIVITY_CATEGORY = {
     UNRELATE: 'unrelate',
     UPDATE: 'update',
     UPDATE_PAGE: 'update_page',
+};
+/** Constants for document activity log categories */
+exports.DOCUMENT_ACTIVITY_CATEGORY = {
+    ARCHIVE: 'archive',
+    CREATE: 'create',
+    ADD_PAGE: 'add_page',
+    MOVE: 'move',
+    RESTORE: 'restore',
+    SHARE: 'share',
+    REMOVE_PAGE: 'remove_page',
+    UPDATE: 'update',
 };
 /** Enum defining the possible metadata processing outcomes for a file. */
 exports.FILE_METADATA_STATUS = {

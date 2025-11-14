@@ -185,10 +185,12 @@ export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof 
 
 /** Constants for document activity log categories */
 export const DOCUMENT_ACTIVITY_CATEGORY = {
+  ACCEPT_SUGGESTION: 'accept_suggestion',
   ARCHIVE: 'archive',
   CREATE: 'create',
   ADD_PAGE: 'add_page',
   MOVE: 'move',
+  REJECT_SUGGESTION: 'reject_suggestion',
   RESTORE: 'restore',
   SHARE: 'share',
   REMOVE_PAGE: 'remove_page',

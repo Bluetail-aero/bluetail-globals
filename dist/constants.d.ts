@@ -109,10 +109,12 @@ export declare const FILE_ACTIVITY_CATEGORY: {
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 /** Constants for document activity log categories */
 export declare const DOCUMENT_ACTIVITY_CATEGORY: {
+    readonly ACCEPT_SUGGESTION: "accept_suggestion";
     readonly ARCHIVE: "archive";
     readonly CREATE: "create";
     readonly ADD_PAGE: "add_page";
     readonly MOVE: "move";
+    readonly REJECT_SUGGESTION: "reject_suggestion";
     readonly RESTORE: "restore";
     readonly SHARE: "share";
     readonly REMOVE_PAGE: "remove_page";

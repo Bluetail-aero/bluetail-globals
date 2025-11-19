@@ -156,10 +156,12 @@ exports.FILE_ACTIVITY_CATEGORY = {
 };
 /** Constants for document activity log categories */
 exports.DOCUMENT_ACTIVITY_CATEGORY = {
+    ACCEPT_SUGGESTION: 'accept_suggestion',
     ARCHIVE: 'archive',
     CREATE: 'create',
     ADD_PAGE: 'add_page',
     MOVE: 'move',
+    REJECT_SUGGESTION: 'reject_suggestion',
     RESTORE: 'restore',
     SHARE: 'share',
     REMOVE_PAGE: 'remove_page',

@@ -46,6 +46,7 @@
     2025.08.08 - Added constants and types for OPENSEARCH_STATUS, FORM_STATUS, FORM_DATE_STATUS, FILE_METADATA_STATUS, FILE_BADASS_STATUS, TEXTRACT_STATUS, MACH_STATUS, DELETE_STATUS, FILE_HOMOGENIZATION_STATUS
     2025.09.28 - Made a non-breaking alteration to OPENSEARCH_STATUS to differentiate between SKIPPED and FAILED states.
     2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
+    2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
 */
 
 
@@ -167,6 +168,7 @@ export type ListAircraftMakesGroupType = (typeof LIST_AIRCRAFT_MAKES_GROUP_TYPES
 /** Constants for file activity log categories */
 export const FILE_ACTIVITY_CATEGORY = {
   ACCEPT_SUGGESTION: 'accept_suggestion',
+  AI_SUGGESTIONS_APPLIED: 'ai_suggestions_applied',
   ARCHIVE: 'archive',
   CREATE: 'create',
   HIDE_PAGE: 'hide_page',

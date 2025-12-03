@@ -292,6 +292,8 @@ export type DeleteStatus = (typeof DELETE_STATUS)[keyof typeof DELETE_STATUS];
 
 /** Enum defining the possible homogenization outcomes for a file. */
 export const FILE_HOMOGENIZATION_STATUS = {
+  /** Homogenization is not required for this file. */
+  NOT_NEEDED: -9,
   /** Failed, because it failed meta-data extraction. */
   NO_META_DATA: -8,
   /** Failed, because the PDF was corrupt or encrypted. */

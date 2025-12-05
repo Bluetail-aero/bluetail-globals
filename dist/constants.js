@@ -186,6 +186,8 @@ exports.FILE_METADATA_STATUS = {
 };
 /** Enum defining the possible BADASS outcomes for a file. */
 exports.FILE_BADASS_STATUS = {
+    /** AI processing is not required for this file. */
+    NOT_NEEDED: -8,
     /** Failed, because the PDF was corrupt or encrypted. */
     ENCRYPTED_PDF: -7,
     /** Failed, because we don't know how many pages the PDF contains. */

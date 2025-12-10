@@ -155,6 +155,7 @@ exports.FILE_ACTIVITY_CATEGORY = {
     UNRELATE: 'unrelate',
     UPDATE: 'update',
     UPDATE_PAGE: 'update_page',
+    BOUNDARIES_UPDATED: 'boundaries_updated',
 };
 /** Constants for document activity log categories */
 exports.DOCUMENT_ACTIVITY_CATEGORY = {

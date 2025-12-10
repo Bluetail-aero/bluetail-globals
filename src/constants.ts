@@ -182,6 +182,7 @@ export const FILE_ACTIVITY_CATEGORY = {
   UNRELATE: 'unrelate',
   UPDATE: 'update',
   UPDATE_PAGE: 'update_page',
+  BOUNDARIES_UPDATED: 'boundaries_updated',
 } as const;
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 

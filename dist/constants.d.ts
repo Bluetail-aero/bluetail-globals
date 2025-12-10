@@ -106,6 +106,7 @@ export declare const FILE_ACTIVITY_CATEGORY: {
     readonly UNRELATE: "unrelate";
     readonly UPDATE: "update";
     readonly UPDATE_PAGE: "update_page";
+    readonly BOUNDARIES_UPDATED: "boundaries_updated";
 };
 export type FileActivityCategory = (typeof FILE_ACTIVITY_CATEGORY)[keyof typeof FILE_ACTIVITY_CATEGORY];
 /** Constants for document activity log categories */

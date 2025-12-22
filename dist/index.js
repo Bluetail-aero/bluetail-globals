@@ -8,6 +8,7 @@
     2025.02.07 - Converting this package to use typescript.
     2025.04.18 - Dropped the use of AircraftId.  Export the type FolderType.
     2025.05.28 - Created the JustDate type so we can model document_date and form_date
+    2025.12.22 - Moved pageDataPathMethodFuncs from bluetail-domain PageDataService to here BT-8021
 */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -33,3 +34,4 @@ var FolderKey_1 = require("./FolderKey");
 Object.defineProperty(exports, "FOLDER_TYPES", { enumerable: true, get: function () { return FolderKey_1.FOLDER_TYPES; } });
 Object.defineProperty(exports, "FolderKey", { enumerable: true, get: function () { return FolderKey_1.FolderKey; } });
 __exportStar(require("./JustDate"), exports);
+__exportStar(require("./pageDataPathMethodFuncs"), exports);

@@ -265,4 +265,13 @@ export declare const OPENSEARCH_STATUS: {
 };
 /** Enum defining the possible OpenSearch indexing statuses for a document. */
 export type OpensearchStatus = (typeof OPENSEARCH_STATUS)[keyof typeof OPENSEARCH_STATUS];
+/** Enum defining the possible page data path methods.  This is how we construct a path to homogenized page files and thumbnails. */
+export declare const PAGE_DATA_PATH_METHOD: {
+    /** Legacy path method. */
+    readonly PREFIX_PER_FILE: 1;
+    /** New path method. See https://bluetail.atlassian.net/browse/BT-7299 */
+    readonly PREFIX_PER_PAGE: 2;
+};
+/** Enum defining the possible metadata processing outcomes for a file. */
+export type PageDataPathMethod = (typeof PAGE_DATA_PATH_METHOD)[keyof typeof PAGE_DATA_PATH_METHOD];
 //# sourceMappingURL=constants.d.ts.map

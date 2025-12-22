@@ -47,6 +47,7 @@
     2025.09.28 - Made a non-breaking alteration to OPENSEARCH_STATUS to differentiate between SKIPPED and FAILED states.
     2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
     2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
+    2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
 */
 
 
@@ -374,3 +375,13 @@ export const OPENSEARCH_STATUS = {
 } as const;
 /** Enum defining the possible OpenSearch indexing statuses for a document. */
 export type OpensearchStatus = (typeof OPENSEARCH_STATUS)[keyof typeof OPENSEARCH_STATUS];
+
+/** Enum defining the possible page data path methods.  This is how we construct a path to homogenized page files and thumbnails. */
+export const PAGE_DATA_PATH_METHOD = {
+  /** Legacy path method. */
+  PREFIX_PER_FILE: 1,
+  /** New path method. See https://bluetail.atlassian.net/browse/BT-7299 */
+  PREFIX_PER_PAGE: 2,
+} as const;
+/** Enum defining the possible metadata processing outcomes for a file. */
+export type PageDataPathMethod = (typeof PAGE_DATA_PATH_METHOD)[keyof typeof PAGE_DATA_PATH_METHOD];

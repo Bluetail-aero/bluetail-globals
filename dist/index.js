@@ -26,7 +26,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FolderKey = exports.FOLDER_TYPES = void 0;
+exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FileSourceFactory = exports.FolderKey = exports.FOLDER_TYPES = void 0;
 __exportStar(require("./constants"), exports);
 __exportStar(require("./functions"), exports);
 __exportStar(require("./roles_and_privileges"), exports);
@@ -37,5 +37,6 @@ Object.defineProperty(exports, "FolderKey", { enumerable: true, get: function ()
 __exportStar(require("./JustDate"), exports);
 __exportStar(require("./pageDataPathMethodFuncs"), exports);
 var fileSource_1 = require("./fileSource");
+Object.defineProperty(exports, "FileSourceFactory", { enumerable: true, get: function () { return fileSource_1.FileSourceFactory; } });
 Object.defineProperty(exports, "getUserIdFromSource", { enumerable: true, get: function () { return fileSource_1.getUserIdFromSource; } });
 Object.defineProperty(exports, "getUploadedTypeFromSource", { enumerable: true, get: function () { return fileSource_1.getUploadedTypeFromSource; } });

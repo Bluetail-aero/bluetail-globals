@@ -8,6 +8,7 @@
     2025.04.18 - Dropped the use of AircraftId.  Export the type FolderType.
     2025.05.28 - Created the JustDate type so we can model document_date and form_date
     2025.12.22 - Moved pageDataPathMethodFuncs from bluetail-domain PageDataService to here BT-8021
+    2025.12.23 - Moved FileSourceFactory, FileSource, getUserIdFromSource, getUploadedTypeFromSource etc from bluetail-domain.
 */
 
 export * from './constants';
@@ -18,3 +19,5 @@ export { FOLDER_TYPES, FolderType, FolderKey } from './FolderKey';
 export type { JustDate } from './JustDate';
 export * from './JustDate';
 export * from './pageDataPathMethodFuncs';
+export { getUserIdFromSource, getUploadedTypeFromSource } from './fileSource';
+export type { FileSource, FileSourceSession, FileSourceAdmin, FileSourceEmail, FileSourceApi, FileSourceIntegration } from './fileSource';

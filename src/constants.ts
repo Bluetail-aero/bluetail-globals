@@ -48,6 +48,7 @@
     2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
     2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
     2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
+    2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
 */
 
 
@@ -385,3 +386,13 @@ export const PAGE_DATA_PATH_METHOD = {
 } as const;
 /** Enum defining the possible metadata processing outcomes for a file. */
 export type PageDataPathMethod = (typeof PAGE_DATA_PATH_METHOD)[keyof typeof PAGE_DATA_PATH_METHOD];
+
+/**
+ * FilePriority a file or job can take. Allowed values are 1..10 (1=highest 10=lowest).
+ */
+export type FilePriority = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+/**
+ * Default priority for a file or job.
+ */
+export const DEFAULT_FILE_PRIORITY = 6;

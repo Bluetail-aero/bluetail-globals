@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-disable no-magic-numbers */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PAGE_DATA_PATH_METHOD = exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
+exports.DEFAULT_FILE_PRIORITY = exports.PAGE_DATA_PATH_METHOD = exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
 /*
   A valueable resource that centralizes all the constants and enums used across the Bluetail codebase.
 
@@ -302,3 +302,7 @@ exports.PAGE_DATA_PATH_METHOD = {
     /** New path method. See https://bluetail.atlassian.net/browse/BT-7299 */
     PREFIX_PER_PAGE: 2,
 };
+/**
+ * Default priority for a file or job.
+ */
+exports.DEFAULT_FILE_PRIORITY = 6;

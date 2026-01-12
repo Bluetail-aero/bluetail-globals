@@ -50,6 +50,7 @@ exports.DEFAULT_FILE_PRIORITY = exports.PAGE_DATA_PATH_METHOD = exports.OPENSEAR
     2025.11.07 - Add DOCUMENT_ACTIVITY_CATEGORY enum
     2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
     2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
+    2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
 */
 /** Generic error message to be used when an IDK error occurs.*/
 exports.GENERIC_ERROR_MESSAGE = `

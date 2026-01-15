@@ -76,5 +76,7 @@ export const PRIVILEGES = { //! Note: The string value must precisely match the 
   watermarkStatus: 'watermarkStatus',
   DOCUMENT_ACTIVITY_VIEW: 'DOCUMENT_ACTIVITY_VIEW',
   OPERATIONS_VIEW: 'OPERATIONS_VIEW',
+  LOGBOOKS_VIEW: 'LOGBOOKS_VIEW',
+  LOGBOOKS_EDIT: 'LOGBOOKS_EDIT',
 } as const;
 export type PrivilegeEnum = (typeof PRIVILEGES)[keyof typeof PRIVILEGES];

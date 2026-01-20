@@ -282,4 +282,14 @@ export type FilePriority = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
  * Default priority for a file or job.
  */
 export declare const DEFAULT_FILE_PRIORITY = 6;
+/**
+ * Backfill status values used when backfilling Textract data into MongoDB.
+ */
+export declare const MONGO_TEXTRACT_BACKFILL_STATUS: {
+    readonly TODO: 0;
+    readonly DONE: 1;
+    readonly NOTHING_TO_DO: -2;
+    readonly FAILED: -1;
+};
+export type MongoTextractBackfillStatus = typeof MONGO_TEXTRACT_BACKFILL_STATUS[keyof typeof MONGO_TEXTRACT_BACKFILL_STATUS];
 //# sourceMappingURL=constants.d.ts.map

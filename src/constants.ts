@@ -49,6 +49,7 @@
     2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
     2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
     2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
+    2026.01.20 - Export MONGO_TEXTRACT_BACKFILL_STATUS and MongoTextractBackfillStatus type. BT-8025
 */
 
 
@@ -396,3 +397,14 @@ export type FilePriority = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
  * Default priority for a file or job.
  */
 export const DEFAULT_FILE_PRIORITY = 6;
+
+/**
+ * Backfill status values used when backfilling Textract data into MongoDB.
+ */
+export const MONGO_TEXTRACT_BACKFILL_STATUS = {
+  TODO: 0,
+  DONE: 1,
+  NOTHING_TO_DO: -2,
+  FAILED: -1
+} as const;
+export type MongoTextractBackfillStatus = typeof MONGO_TEXTRACT_BACKFILL_STATUS[keyof typeof MONGO_TEXTRACT_BACKFILL_STATUS];

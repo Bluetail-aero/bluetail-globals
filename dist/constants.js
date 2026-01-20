@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-disable no-magic-numbers */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEFAULT_FILE_PRIORITY = exports.PAGE_DATA_PATH_METHOD = exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
+exports.MONGO_TEXTRACT_BACKFILL_STATUS = exports.DEFAULT_FILE_PRIORITY = exports.PAGE_DATA_PATH_METHOD = exports.OPENSEARCH_STATUS = exports.FORM_DATE_STATUS = exports.FORM_STATUS = exports.FILE_HOMOGENIZATION_STATUS = exports.DELETE_STATUS = exports.MACH_STATUS = exports.TEXTRACT_STATUS = exports.FILE_BADASS_STATUS = exports.FILE_METADATA_STATUS = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.TIME_BASED_TOKEN_TYPE = exports.NOTIFICATION_TYPES = exports.TRACKING_TYPES = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.UPLOAD_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = exports.SYSTEM_USER_ID = exports.HOLD_SHORT = exports.DEFAULT_FLEET_NAME = exports.GENERIC_ERROR_MESSAGE = void 0;
 /*
   A valueable resource that centralizes all the constants and enums used across the Bluetail codebase.
 
@@ -51,6 +51,7 @@ exports.DEFAULT_FILE_PRIORITY = exports.PAGE_DATA_PATH_METHOD = exports.OPENSEAR
     2025.11.25 - Added AI_SUGGESTIONS_APPLIED to FILE_ACTIVITY_CATEGORY
     2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
     2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
+    2026.01.20 - Export MONGO_TEXTRACT_BACKFILL_STATUS and MongoTextractBackfillStatus type. BT-8025
 */
 /** Generic error message to be used when an IDK error occurs.*/
 exports.GENERIC_ERROR_MESSAGE = `
@@ -307,3 +308,12 @@ exports.PAGE_DATA_PATH_METHOD = {
  * Default priority for a file or job.
  */
 exports.DEFAULT_FILE_PRIORITY = 6;
+/**
+ * Backfill status values used when backfilling Textract data into MongoDB.
+ */
+exports.MONGO_TEXTRACT_BACKFILL_STATUS = {
+    TODO: 0,
+    DONE: 1,
+    NOTHING_TO_DO: -2,
+    FAILED: -1
+};

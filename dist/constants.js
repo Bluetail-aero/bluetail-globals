@@ -52,6 +52,7 @@ exports.MONGO_TEXTRACT_BACKFILL_STATUS = exports.DEFAULT_FILE_PRIORITY = exports
     2025.12.22 - Add PAGE_DATA_PATH_METHOD and PageDataPathMethod type BT-8021
     2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
     2026.01.20 - Export MONGO_TEXTRACT_BACKFILL_STATUS and MongoTextractBackfillStatus type. BT-8025
+    2026.01.22 - Add NO_OCR_DATA to FILE_BADASS_STATUS. BT-8245
 */
 /** Generic error message to be used when an IDK error occurs.*/
 exports.GENERIC_ERROR_MESSAGE = `
@@ -190,6 +191,8 @@ exports.FILE_METADATA_STATUS = {
 };
 /** Enum defining the possible BADASS outcomes for a file. */
 exports.FILE_BADASS_STATUS = {
+    /** Failed, because the file contains no OCR data.. */
+    NO_OCR_DATA: -8,
     /** Failed, because the PDF was corrupt or encrypted. */
     ENCRYPTED_PDF: -7,
     /** Failed, because we don't know how many pages the PDF contains. */

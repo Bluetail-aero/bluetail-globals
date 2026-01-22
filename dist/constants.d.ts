@@ -142,6 +142,8 @@ export declare const FILE_METADATA_STATUS: {
 export type FileMetaDataStatus = (typeof FILE_METADATA_STATUS)[keyof typeof FILE_METADATA_STATUS];
 /** Enum defining the possible BADASS outcomes for a file. */
 export declare const FILE_BADASS_STATUS: {
+    /** Failed, because the file contains no OCR data.. */
+    readonly NO_OCR_DATA: -8;
     /** Failed, because the PDF was corrupt or encrypted. */
     readonly ENCRYPTED_PDF: -7;
     /** Failed, because we don't know how many pages the PDF contains. */

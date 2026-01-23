@@ -22,4 +22,30 @@ export declare const MAILED_REPLY_SENDING_TYPES: {
     readonly EMAIL_TO_USER_FOR_DEACTIVATED_AIRCRAFT: 6;
 };
 export type MailedReplySendingType = (typeof MAILED_REPLY_SENDING_TYPES)[keyof typeof MAILED_REPLY_SENDING_TYPES];
+/** Interface for mailed_docs_email table records */
+export interface IMailedDocsEmail {
+    mailed_docs_email_id: number;
+    sender: string;
+    message_id: string;
+    subject: string;
+    sent_date: Date;
+    body_text: string;
+    sent_to: string[];
+    sent_cc?: string[];
+    attachments?: IMailedDocs[];
+}
+/** Interface for mailed_docs table records */
+export interface IMailedDocs {
+    id: number;
+    created_dt: Date;
+    mailed_docs_email_id: number;
+    sanitized_filename: string;
+    original_filename: string;
+    content_type: string;
+    size: number;
+    stage: string;
+    status: number;
+    error: string;
+    md5_hash: string;
+}
 //# sourceMappingURL=mailedDocs.d.ts.map

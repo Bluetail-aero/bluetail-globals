@@ -7,6 +7,7 @@
     2025.02.21 - Added DUPLICATE to MAILED_DOC_STATUS.
     2025.02.27 - Added SMALL_IMAGE to MAILED_DOC_STATUS.
     2025.03.27 - Renaming SMALL_IMAGE to EMAIL_SIGNATURE in MAILED_DOC_STATUS.
+    2026.01.06 - Added IMailedDocsEmail and IMailedDocs type definitions for backend endpoints.
 
   TODOS:
     -

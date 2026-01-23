@@ -6,6 +6,7 @@
     2025.02.21 - Added DUPLICATE to MAILED_DOC_STATUS.
     2025.02.27 - Added SMALL_IMAGE to MAILED_DOC_STATUS.
     2025.03.27 - Renaming SMALL_IMAGE to EMAIL_SIGNATURE in MAILED_DOC_STATUS.
+    2026.01.06 - Added IMailedDocsEmail and IMailedDocs type definitions for backend endpoints.
 
   TODOS:
     -
@@ -36,3 +37,31 @@ export const MAILED_REPLY_SENDING_TYPES = {
   EMAIL_TO_USER_FOR_DEACTIVATED_AIRCRAFT: 6,
 } as const;
 export type MailedReplySendingType = (typeof MAILED_REPLY_SENDING_TYPES)[keyof typeof MAILED_REPLY_SENDING_TYPES];
+
+/** Interface for mailed_docs_email table records */
+export interface IMailedDocsEmail {
+  mailed_docs_email_id: number;
+  sender: string;
+  message_id: string;
+  subject: string;
+  sent_date: Date;
+  body_text: string;
+  sent_to: string[];
+  sent_cc?: string[];
+  attachments?: IMailedDocs[];
+}
+
+/** Interface for mailed_docs table records */
+export interface IMailedDocs {
+  id: number;
+  created_dt: Date;
+  mailed_docs_email_id: number;
+  sanitized_filename: string;
+  original_filename: string;
+  content_type: string;
+  size: number;
+  stage: string;
+  status: number;
+  error: string;
+  md5_hash: string;
+}

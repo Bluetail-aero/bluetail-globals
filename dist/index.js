@@ -26,11 +26,13 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FileSourceFactory = exports.FolderKey = exports.FOLDER_TYPES = void 0;
+exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FileSourceFactory = exports.FolderKey = exports.FOLDER_TYPES = exports.MAILED_REPLY_SENDING_TYPES = exports.MAILED_DOC_STATUS = void 0;
 __exportStar(require("./constants"), exports);
 __exportStar(require("./functions"), exports);
 __exportStar(require("./roles_and_privileges"), exports);
-__exportStar(require("./mailedDocs"), exports);
+var mailedDocs_1 = require("./mailedDocs");
+Object.defineProperty(exports, "MAILED_DOC_STATUS", { enumerable: true, get: function () { return mailedDocs_1.MAILED_DOC_STATUS; } });
+Object.defineProperty(exports, "MAILED_REPLY_SENDING_TYPES", { enumerable: true, get: function () { return mailedDocs_1.MAILED_REPLY_SENDING_TYPES; } });
 var FolderKey_1 = require("./FolderKey");
 Object.defineProperty(exports, "FOLDER_TYPES", { enumerable: true, get: function () { return FolderKey_1.FOLDER_TYPES; } });
 Object.defineProperty(exports, "FolderKey", { enumerable: true, get: function () { return FolderKey_1.FolderKey; } });

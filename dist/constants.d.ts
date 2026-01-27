@@ -294,4 +294,21 @@ export declare const MONGO_TEXTRACT_BACKFILL_STATUS: {
     readonly FAILED: -1;
 };
 export type MongoTextractBackfillStatus = typeof MONGO_TEXTRACT_BACKFILL_STATUS[keyof typeof MONGO_TEXTRACT_BACKFILL_STATUS];
+/** Constants for account activity log categories (BT-8265) */
+export declare const ACCOUNT_ACTIVITY_CATEGORY: {
+    readonly USER_CREATED: "user_created";
+    readonly USER_UPDATED: "user_updated";
+    readonly USER_DELETED: "user_deleted";
+    readonly AIRCRAFT_ADDED: "aircraft_added";
+    readonly AIRCRAFT_REMOVED: "aircraft_removed";
+};
+export type AccountActivityCategory = (typeof ACCOUNT_ACTIVITY_CATEGORY)[keyof typeof ACCOUNT_ACTIVITY_CATEGORY];
+/** Constants for dashboard activity types (BT-8265) */
+export declare const DASHBOARD_ACTIVITY_TYPE: {
+    readonly ACCOUNT: "account";
+    readonly FILE: "file";
+    readonly DOCUMENT: "document";
+    readonly COMPLIANCE: "compliance";
+};
+export type DashboardActivityType = (typeof DASHBOARD_ACTIVITY_TYPE)[keyof typeof DASHBOARD_ACTIVITY_TYPE];
 //# sourceMappingURL=constants.d.ts.map

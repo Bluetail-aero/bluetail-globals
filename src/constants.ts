@@ -51,6 +51,7 @@
     2026.01.08 - Add FilePriority type and DEFAULT_FILE_PRIORITY constants. BT-8025
     2026.01.20 - Export MONGO_TEXTRACT_BACKFILL_STATUS and MongoTextractBackfillStatus type. BT-8025
     2026.01.22 - Add NO_OCR_DATA to FILE_BADASS_STATUS. BT-8245
+    2026.01.27 - Add ACCOUNT_ACTIVITY_CATEGORY and DASHBOARD_ACTIVITY_TYPE constants. BT-8265
 */
 
 
@@ -411,3 +412,22 @@ export const MONGO_TEXTRACT_BACKFILL_STATUS = {
   FAILED: -1
 } as const;
 export type MongoTextractBackfillStatus = typeof MONGO_TEXTRACT_BACKFILL_STATUS[keyof typeof MONGO_TEXTRACT_BACKFILL_STATUS];
+
+/** Constants for account activity log categories (BT-8265) */
+export const ACCOUNT_ACTIVITY_CATEGORY = {
+  USER_CREATED: 'user_created',
+  USER_UPDATED: 'user_updated',
+  USER_DELETED: 'user_deleted',
+  AIRCRAFT_ADDED: 'aircraft_added',
+  AIRCRAFT_REMOVED: 'aircraft_removed',
+} as const;
+export type AccountActivityCategory = (typeof ACCOUNT_ACTIVITY_CATEGORY)[keyof typeof ACCOUNT_ACTIVITY_CATEGORY];
+
+/** Constants for dashboard activity types (BT-8265) */
+export const DASHBOARD_ACTIVITY_TYPE = {
+  ACCOUNT: 'account',
+  FILE: 'file',
+  DOCUMENT: 'document',
+  COMPLIANCE: 'compliance',
+} as const;
+export type DashboardActivityType = (typeof DASHBOARD_ACTIVITY_TYPE)[keyof typeof DASHBOARD_ACTIVITY_TYPE];

@@ -1,0 +1,1 @@
+{"version":3,"file":"filePaths.d.ts","sourceRoot":"","sources":["../src/filePaths.ts"],"names":[],"mappings":"AASA,eAAO,MAAM,uBAAuB,QAA4B,CAAC;AAGjE,eAAO,MAAM,sBAAsB,QAA2B,CAAC;AAI/D;;;;GAIG;AACH,wBAAgB,yBAAyB,CAAC,UAAU,EAAE,MAAM,GAAG,MAAM,EAAE,GAAG,IAAI,CAW7E;AAED;;;;;GAKG;AACH,wBAAgB,uBAAuB,CAAC,UAAU,EAAE,MAAM,EAAE,eAAe,GAAE,MAAY,GAAG,MAAM,GAAG,IAAI,CAKxG"}

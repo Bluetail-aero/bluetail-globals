@@ -1,13 +1,22 @@
-import { PAGE_DATA_PATH_METHOD, PageDataPathMethod } from './constants';
-
 /*
   CHANGE HISTORY:
     2025.07.07 - Moved formObjectKeyForPage to its own file for exporting (use in homogenizer-lambda). BT-7304
     2025.12.22 - Moved these functions from bluetail-domain PageDataService to here BT-8021
+    2025.05.28 - Reorganize all constants.
 */
 
 // Functions created to handle transition to new page data path method.
 // See https://bluetail.atlassian.net/browse/BT-7299
+
+/** Enum defining the possible page data path methods.  This is how we construct a path to homogenized page files and thumbnails. */
+export const PAGE_DATA_PATH_METHOD = {
+  /** Legacy path method. */
+  PREFIX_PER_FILE: 1,
+  /** New path method. See https://bluetail.atlassian.net/browse/BT-7299 */
+  PREFIX_PER_PAGE: 2,
+} as const;
+/** Enum defining the possible metadata processing outcomes for a file. */
+export type PageDataPathMethod = (typeof PAGE_DATA_PATH_METHOD)[keyof typeof PAGE_DATA_PATH_METHOD];
 
 /**
  * Forms the S3 object key for a page.

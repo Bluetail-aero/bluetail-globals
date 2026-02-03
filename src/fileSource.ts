@@ -1,5 +1,3 @@
-import { UPLOAD_TYPES, UploadType } from './constants';
-
 /*
   CHANGE HISTORY:
     2025.04.22 - [2.0.0] Complete overhaul of the whole package:
@@ -8,7 +6,26 @@ import { UPLOAD_TYPES, UploadType } from './constants';
                  - All the modules pretending to be a DataAdapter that weren't have been refactored as service layer functions.
                  - Some of the service layer functions have been reorganized according to a module naming strategy.
     2025.12.23 - [1.5.0] Moved FileSourceFactory, FileSource, getUserIdFromSource, getUploadedTypeFromSource etc from bluetail-domain.
+    2025.05.28 - Reorganize all constants.
 */
+
+/** Enum defining the different upload (source) types */
+export const UPLOAD_TYPES = {
+  COMPUTER: 1,
+  GOOGLE_DRIVE: 2,
+  DROPBOX: 3,
+  ONE_DRIVE: 4,
+  WATERMARK: 5, // when applying a watermark ?? unclear if we are uploading a new file or modifying existing one.
+  E_SIGN: 5, //  when applying a e-signature ?? unclear if we are uploading a new file or modifying existing one.
+  WEB_CLIPPER: 6,
+  VERYON_INTEGRATION: 7,
+  // Note: 8 was used once, but is now deprecated.
+  ADMIN_UPLOAD: 9,
+  EMAIL: 10,
+  PUBLIC_API: 11,
+  STRATOLAUNCHER: 12,
+} as const;
+export type UploadType = (typeof UPLOAD_TYPES)[keyof typeof UPLOAD_TYPES];
 
 /** Helper for constructing a FileSource */
 export const FileSourceFactory = {

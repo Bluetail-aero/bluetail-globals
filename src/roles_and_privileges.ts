@@ -1,11 +1,7 @@
 /*
-
   CHANGE HISTORY:
     2025.02.07 - Converting this package to use typescript.
                - Spun this module off from the main 'constants' module.
-
-  TODOS:
-    -
 */
 
 /** Enum defining the system's supported role types */

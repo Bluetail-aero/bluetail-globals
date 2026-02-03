@@ -1,40 +1,21 @@
 /*
-  Class to represent a FolderKey.
-  Supporting format validation and type determination.
-
-  USAGE EXAMPLE:
-
-  if (!FolderKey.isValidKey("L:1:1045")) {
-    console.log("String was invalid");
-  } else {
-    const f = new FolderKey("L:1:1045");
-    console.log("The FolderKey f is of type: " + f.type);
-    switch (f.type) {
-      case "logbook":
-        console.log("The FolderKey f is a logbook with id: " + f.logbookCategoryId);
-        break;
-      case "category":
-        console.log("The FolderKey f is a category with id: " + f.logbookCategoryId);
-        break;
-      case "logbook_folder":
-        console.log("The FolderKey f is a logbook-subfolder with id: " + f.subFolderId);
-        break;
-      case "category_folder":
-        console.log("The FolderKey f is a category-subfolder with id: " + f.subFolderId);
-        break;
-      default:
-        console.log("Unknown type");
-    }
-  }
-
   CHANGE HISTORY:
     2024.08.22 - Initial draft.
     2025.02.07 - Converting this package to use typescript.
                - Also, updated it to support office categories and subcategories.
-
-  TODOS:
-    -
+    2025.05.28 - Reorganize all constants.
 */
+
+/** The ID of the standard "HOLD SHORT" logbook_category. */
+export const HOLD_SHORT = 9;
+
+/** Enum defining the types of logbook/category supported. */
+export const LOGBOOK_CATEGORY_TYPES = {
+  LOGBOOK: 1,
+  CATEGORY: 2,
+} as const;
+export type LogbookCategoryType = (typeof LOGBOOK_CATEGORY_TYPES)[keyof typeof LOGBOOK_CATEGORY_TYPES];
+
 
 export const FOLDER_TYPES = {
   LOGBOOK: 'logbook',
@@ -60,6 +41,32 @@ const LEVEL_2_FOLDER = 2;
  *  L:1:1045 - Logbook with id 1 and subfolder with id 1045
  *  C:1:1045 - Category with id 1 and subfolder with id 1045
  *  O:1:1045 - Office category with id 1 and subfolder with id 1045
+ * 
+ * 
+  USAGE EXAMPLE:
+
+  if (!FolderKey.isValidKey("L:1:1045")) {
+    console.log("String was invalid");
+  } else {
+    const f = new FolderKey("L:1:1045");
+    console.log("The FolderKey f is of type: " + f.type);
+    switch (f.type) {
+      case "logbook":
+        console.log("The FolderKey f is a logbook with id: " + f.logbookCategoryId);
+        break;
+      case "category":
+        console.log("The FolderKey f is a category with id: " + f.logbookCategoryId);
+        break;
+      case "logbook_folder":
+        console.log("The FolderKey f is a logbook-subfolder with id: " + f.subFolderId);
+        break;
+      case "category_folder":
+        console.log("The FolderKey f is a category-subfolder with id: " + f.subFolderId);
+        break;
+      default:
+        console.log("Unknown type");
+    }
+  }
  */
 export class FolderKey {
   private key: string;

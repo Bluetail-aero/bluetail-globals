@@ -1,14 +1,10 @@
 /*
-
   CHANGE HISTORY:
     2025.02.07 - Converting this package to use typescript.
                - Spun this module off from the main 'constants' module.
     2025.02.21 - Added DUPLICATE to MAILED_DOC_STATUS.
     2025.02.27 - Added SMALL_IMAGE to MAILED_DOC_STATUS.
     2025.03.27 - Renaming SMALL_IMAGE to EMAIL_SIGNATURE in MAILED_DOC_STATUS.
-
-  TODOS:
-    -
 */
 
 /** Enum defining the supported statuses for an imported email document */

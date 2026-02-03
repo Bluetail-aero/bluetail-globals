@@ -1,14 +1,11 @@
-import { AccountStyle, ACCOUNT_STYLE } from './constants';
-/*
+import { AccountStyle, ACCOUNT_STYLE } from './account';
 
+/*
   CHANGE HISTORY:
     2024.05.31 - Remove the need for the 'path' module so this will work in a browser.
     2025.01.17 - Fix lint warnings "Unexpected unnamed function"
     2025.01.24 - Add accountStyleText function.
     2025.02.07 - Converting this package to use typescript.
-
-  TODOS:
-    -
 */
 
 // These characters are not allowed in file names. They will be removed and replaced by "_".

@@ -1,12 +1,14 @@
 /*
-
   CHANGE HISTORY:
     2025.05.28 - Created this type so we can model document_date and form_date
     2025.06.05 - Handle empty string case
-
-  TODOS:
-    -
+    2025.05.28 - Reorganize all constants.
 */
+
+// These date/time formats are used as standards across the application.
+export const DATE_TIME_FORMAT = 'YYYY-MM-DD[T]HH:mm:ss';
+export const DEFAULT_DATE_FORMAT = 'MM-DD-YYYY';
+export const LOCAL_DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
 
 /** A branded type for ISO date strings (YYYY-MM-DD) 
  * 

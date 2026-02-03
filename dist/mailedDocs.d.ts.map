@@ -1,1 +1,0 @@
-{"version":3,"file":"mailedDocs.d.ts","sourceRoot":"","sources":["../src/mailedDocs.ts"],"names":[],"mappings":"AAaA,0EAA0E;AAC1E,eAAO,MAAM,iBAAiB;;;;;;;;;;CAUpB,CAAC;AACX,MAAM,MAAM,eAAe,GAAG,CAAC,OAAO,iBAAiB,CAAC,CAAC,MAAM,OAAO,iBAAiB,CAAC,CAAC;AAEzF,8FAA8F;AAC9F,eAAO,MAAM,0BAA0B;;;;;;;;CAQ7B,CAAC;AACX,MAAM,MAAM,sBAAsB,GAAG,CAAC,OAAO,0BAA0B,CAAC,CAAC,MAAM,OAAO,0BAA0B,CAAC,CAAC"}

@@ -14,12 +14,21 @@
 */
 export * from './account';
 export * from './activity';
-export * from './constants';
+
+export type { JustDate } from './dates';
+export {
+  DATE_TIME_FORMAT,
+  DEFAULT_DATE_FORMAT,
+  LOCAL_DEFAULT_DATE_FORMAT,
+  parseJustDate
+} from './dates';
+
 export * from './fileBadassStatus';
 export * from './fileDeleteStatus';
 export * from './fileFormStatus';
 export * from './fileHomogenizationStatus';
 export * from './fileMetaDataStatus';
+export * from './filePaths';
 export * from './filePriority';
 export * from './fileProcessingEvents';
 
@@ -41,21 +50,18 @@ export {
 } from './fileSource';
 
 // folderKey
-export type { LogbookCategoryType, FolderType } from './FolderKey';
-export { HOLD_SHORT, LOGBOOK_CATEGORY_TYPES, FOLDER_TYPES, FolderKey } from './FolderKey';
-
-export * from './functions';
-
-export type { JustDate } from './JustDate';
+export type { LogbookCategoryType, FolderType } from './folders';
 export {
-  DATE_TIME_FORMAT,
-  DEFAULT_DATE_FORMAT,
-  LOCAL_DEFAULT_DATE_FORMAT,
-  parseJustDate
-} from './JustDate';
+  HOLD_SHORT,
+  LOGBOOK_CATEGORY_TYPES,
+  FOLDER_TYPES,
+  FolderKey
+} from './folders';
 
 export * from './mailedDocs';
+export * from './misc';
 export * from './opensearchStatus';
-export * from './roles_and_privileges';
+export * from './rolesAndPrivileges';
 export * from './pageDataPathMethodFuncs';
+export * from './supportedFileTypes';
 export * from './textract';

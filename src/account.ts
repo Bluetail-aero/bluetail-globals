@@ -49,3 +49,30 @@ export const TIME_BASED_TOKEN_TYPE = {
   FORGOT_PASSWORD: 3,
 } as const;
 export type TimeBasedTokenType = (typeof TIME_BASED_TOKEN_TYPE)[keyof typeof TIME_BASED_TOKEN_TYPE];
+
+interface IAuthenticatedUser {
+  company: {
+    style: AccountStyle;
+  };
+}
+
+/**
+ * Returns the appropriate style verbiage based on the account style.
+ * @param authenticatedUser_or_accountStyle Either the account_style string, or an authenticated user object.
+ * @param tradStyle The traditional style verbiage.
+ * @param partStyle The parts style verbiage.
+ * @returns The appropriate style verbiage.
+ */
+export function accountStyleText(
+  authenticatedUser_or_accountStyle: AccountStyle | IAuthenticatedUser,
+  tradStyle: string,
+  partStyle: string
+): string {
+  // Determine if input is an AccountStyle string or an IAuthenticatedUser object
+  const accountStyle =
+    typeof authenticatedUser_or_accountStyle === 'string'
+      ? authenticatedUser_or_accountStyle
+      : authenticatedUser_or_accountStyle.company.style;
+
+  return accountStyle === ACCOUNT_STYLE.PARTS ? partStyle : tradStyle;
+}

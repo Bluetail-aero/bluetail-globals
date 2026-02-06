@@ -1,4 +1,3 @@
-export declare const DEFAULT_FLEET_NAME = "All Aircraft";
 export declare const LIST_AIRCRAFT_MAKES_GROUP_TYPES: {
     readonly POPULAR: "popular";
     readonly RARE: "rare";

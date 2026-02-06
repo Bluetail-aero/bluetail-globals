@@ -1,9 +1,9 @@
 /*
   CHANGE HISTORY:
     2025.05.28 - Reorganize all constants.
+    2026.02.06 - Drop DEFAULT_FLEET_NAME constant.  no longer needed BT-7817
 */
 
-export const DEFAULT_FLEET_NAME = 'All Aircraft';
 
 // Enum
 export const LIST_AIRCRAFT_MAKES_GROUP_TYPES = {

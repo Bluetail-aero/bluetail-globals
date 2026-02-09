@@ -37,6 +37,8 @@ export declare const ACCOUNT_ACTIVITY_CATEGORY: {
     readonly USER_CREATED: "user_created";
     readonly USER_UPDATED: "user_updated";
     readonly USER_DELETED: "user_deleted";
+    readonly USER_BLOCKED: "user_blocked";
+    readonly USER_UNBLOCKED: "user_unblocked";
     readonly AIRCRAFT_ADDED: "aircraft_added";
     readonly AIRCRAFT_REMOVED: "aircraft_removed";
 };

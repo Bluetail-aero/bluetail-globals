@@ -42,6 +42,8 @@ exports.ACCOUNT_ACTIVITY_CATEGORY = {
     USER_CREATED: 'user_created',
     USER_UPDATED: 'user_updated',
     USER_DELETED: 'user_deleted',
+    USER_BLOCKED: 'user_blocked',
+    USER_UNBLOCKED: 'user_unblocked',
     AIRCRAFT_ADDED: 'aircraft_added',
     AIRCRAFT_REMOVED: 'aircraft_removed',
 };

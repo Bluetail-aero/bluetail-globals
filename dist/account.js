@@ -2,11 +2,11 @@
 /*
   CHANGE HISTORY:
     2025.05.28 - Reorganize all constants.
-    2026.02.06 - Drop DEFAULT_FLEET_NAME constant.  no longer needed BT-7817
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TIME_BASED_TOKEN_TYPE = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = void 0;
+exports.TIME_BASED_TOKEN_TYPE = exports.ACCOUNT_STYLE = exports.ACCOUNT_STATUS = exports.AIRCRAFT_SUBSCRIPTION_STATUS = exports.AIRCRAFT_ASSIGNMENT_METHOD = exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = exports.DEFAULT_FLEET_NAME = void 0;
 exports.accountStyleText = accountStyleText;
+exports.DEFAULT_FLEET_NAME = 'All Aircraft';
 // Enum
 exports.LIST_AIRCRAFT_MAKES_GROUP_TYPES = {
     POPULAR: 'popular',

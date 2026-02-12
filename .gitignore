@@ -14,3 +14,6 @@
 .env*
 !.env.sample
 !.env.tests
+
+# Git worktrees (used by Claude for branch-based development)
+worktrees/

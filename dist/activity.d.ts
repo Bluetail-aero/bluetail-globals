@@ -43,12 +43,22 @@ export declare const ACCOUNT_ACTIVITY_CATEGORY: {
     readonly AIRCRAFT_REMOVED: "aircraft_removed";
 };
 export type AccountActivityCategory = (typeof ACCOUNT_ACTIVITY_CATEGORY)[keyof typeof ACCOUNT_ACTIVITY_CATEGORY];
+/** Constants for location activity log categories (BT-8409) */
+export declare const LOCATION_ACTIVITY_CATEGORY: {
+    readonly CREATE: "create";
+    readonly DELETE: "delete";
+    readonly MOVE: "move";
+    readonly PERMISSIONS_UPDATED: "permissions_updated";
+    readonly UPDATE: "update";
+};
+export type LocationActivityCategory = (typeof LOCATION_ACTIVITY_CATEGORY)[keyof typeof LOCATION_ACTIVITY_CATEGORY];
 /** Constants for dashboard activity types (BT-8265) */
 export declare const DASHBOARD_ACTIVITY_TYPE: {
     readonly ACCOUNT: "account";
     readonly FILE: "file";
     readonly DOCUMENT: "document";
     readonly COMPLIANCE: "compliance";
+    readonly LOCATION: "location";
 };
 export type DashboardActivityType = (typeof DASHBOARD_ACTIVITY_TYPE)[keyof typeof DASHBOARD_ACTIVITY_TYPE];
 //# sourceMappingURL=activity.d.ts.map

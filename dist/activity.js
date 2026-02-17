@@ -2,9 +2,10 @@
 /*
   CHANGE HISTORY:
     2025.05.28 - Reorganize all constants.
+    2026.02.17 - Add LOCATION_ACTIVITY_CATEGORY and LOCATION to DASHBOARD_ACTIVITY_TYPE. BT-8409
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DASHBOARD_ACTIVITY_TYPE = exports.ACCOUNT_ACTIVITY_CATEGORY = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = void 0;
+exports.DASHBOARD_ACTIVITY_TYPE = exports.LOCATION_ACTIVITY_CATEGORY = exports.ACCOUNT_ACTIVITY_CATEGORY = exports.DOCUMENT_ACTIVITY_CATEGORY = exports.FILE_ACTIVITY_CATEGORY = void 0;
 /** Constants for file activity log categories */
 exports.FILE_ACTIVITY_CATEGORY = {
     ACCEPT_SUGGESTION: 'accept_suggestion',
@@ -47,10 +48,19 @@ exports.ACCOUNT_ACTIVITY_CATEGORY = {
     AIRCRAFT_ADDED: 'aircraft_added',
     AIRCRAFT_REMOVED: 'aircraft_removed',
 };
+/** Constants for location activity log categories (BT-8409) */
+exports.LOCATION_ACTIVITY_CATEGORY = {
+    CREATE: 'create',
+    DELETE: 'delete',
+    MOVE: 'move',
+    PERMISSIONS_UPDATED: 'permissions_updated',
+    UPDATE: 'update',
+};
 /** Constants for dashboard activity types (BT-8265) */
 exports.DASHBOARD_ACTIVITY_TYPE = {
     ACCOUNT: 'account',
     FILE: 'file',
     DOCUMENT: 'document',
     COMPLIANCE: 'compliance',
+    LOCATION: 'location',
 };

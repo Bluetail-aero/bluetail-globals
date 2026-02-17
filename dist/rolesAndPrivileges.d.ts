@@ -65,6 +65,9 @@ export declare const PRIVILEGES: {
     readonly watermarkStatus: "watermarkStatus";
     readonly DOCUMENT_ACTIVITY_VIEW: "DOCUMENT_ACTIVITY_VIEW";
     readonly OPERATIONS_VIEW: "OPERATIONS_VIEW";
+    readonly LOCATION_EDIT: "LOCATION_EDIT";
+    readonly LOCATION_MANAGE: "LOCATION_MANAGE";
+    readonly LOCATION_VIEW: "LOCATION_VIEW";
     readonly LOGBOOKS_VIEW: "LOGBOOKS_VIEW";
     readonly LOGBOOKS_EDIT: "LOGBOOKS_EDIT";
 };

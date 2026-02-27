@@ -14,7 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FolderKey = exports.FOLDER_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.HOLD_SHORT = exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FileSourceFactory = exports.UPLOAD_TYPES = exports.parseJustDate = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = void 0;
+exports.FolderKey = exports.FOLDER_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.MAX_NESTING_DEPTH = exports.HOLD_SHORT = exports.getUploadedTypeFromSource = exports.getUserIdFromSource = exports.FileSourceFactory = exports.UPLOAD_TYPES = exports.parseJustDate = exports.LOCAL_DEFAULT_DATE_FORMAT = exports.DEFAULT_DATE_FORMAT = exports.DATE_TIME_FORMAT = void 0;
 /*
   CHANGE HISTORY:
     2024.02.29 - Split constants from bluetail-domain to blueltail-globals.
@@ -51,6 +51,7 @@ Object.defineProperty(exports, "getUserIdFromSource", { enumerable: true, get: f
 Object.defineProperty(exports, "getUploadedTypeFromSource", { enumerable: true, get: function () { return fileSource_1.getUploadedTypeFromSource; } });
 var folders_1 = require("./folders");
 Object.defineProperty(exports, "HOLD_SHORT", { enumerable: true, get: function () { return folders_1.HOLD_SHORT; } });
+Object.defineProperty(exports, "MAX_NESTING_DEPTH", { enumerable: true, get: function () { return folders_1.MAX_NESTING_DEPTH; } });
 Object.defineProperty(exports, "LOGBOOK_CATEGORY_TYPES", { enumerable: true, get: function () { return folders_1.LOGBOOK_CATEGORY_TYPES; } });
 Object.defineProperty(exports, "FOLDER_TYPES", { enumerable: true, get: function () { return folders_1.FOLDER_TYPES; } });
 Object.defineProperty(exports, "FolderKey", { enumerable: true, get: function () { return folders_1.FolderKey; } });

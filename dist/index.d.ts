@@ -13,7 +13,7 @@ export * from './fileProcessingEvents';
 export type { UploadType, FileSource, FileSourceSession, FileSourceAdmin, FileSourceEmail, FileSourceApi, FileSourceIntegration } from './fileSource';
 export { UPLOAD_TYPES, FileSourceFactory, getUserIdFromSource, getUploadedTypeFromSource } from './fileSource';
 export type { LogbookCategoryType, FolderType } from './folders';
-export { HOLD_SHORT, LOGBOOK_CATEGORY_TYPES, FOLDER_TYPES, FolderKey } from './folders';
+export { HOLD_SHORT, MAX_NESTING_DEPTH, LOGBOOK_CATEGORY_TYPES, FOLDER_TYPES, FolderKey } from './folders';
 export * from './mailedDocs';
 export * from './misc';
 export * from './opensearchStatus';

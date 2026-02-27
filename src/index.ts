@@ -53,6 +53,7 @@ export {
 export type { LogbookCategoryType, FolderType } from './folders';
 export {
   HOLD_SHORT,
+  MAX_NESTING_DEPTH,
   LOGBOOK_CATEGORY_TYPES,
   FOLDER_TYPES,
   FolderKey

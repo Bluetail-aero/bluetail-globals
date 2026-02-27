@@ -9,6 +9,9 @@
 /** The ID of the standard "HOLD SHORT" logbook_category. */
 export const HOLD_SHORT = 9;
 
+/** Maximum allowed folder nesting depth — must match backend nestingDepthIsWithinLimit. */
+export const MAX_NESTING_DEPTH = 10;
+
 /** Enum defining the types of logbook/category supported. */
 export const LOGBOOK_CATEGORY_TYPES = {
   LOGBOOK: 1,

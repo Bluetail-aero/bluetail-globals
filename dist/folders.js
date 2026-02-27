@@ -7,9 +7,11 @@
     2025.05.28 - Reorganize all constants.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FolderKey = exports.FOLDER_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.HOLD_SHORT = void 0;
+exports.FolderKey = exports.FOLDER_TYPES = exports.LOGBOOK_CATEGORY_TYPES = exports.MAX_NESTING_DEPTH = exports.HOLD_SHORT = void 0;
 /** The ID of the standard "HOLD SHORT" logbook_category. */
 exports.HOLD_SHORT = 9;
+/** Maximum allowed folder nesting depth — must match backend nestingDepthIsWithinLimit. */
+exports.MAX_NESTING_DEPTH = 10;
 /** Enum defining the types of logbook/category supported. */
 exports.LOGBOOK_CATEGORY_TYPES = {
     LOGBOOK: 1,
